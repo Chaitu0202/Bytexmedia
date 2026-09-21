@@ -1,0 +1,6 @@
+{
+  "name": "ByteX Media",
+  "description": "ByteX Media builds websites, apps, AI automation, and digital growth solutions for ambitious businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
