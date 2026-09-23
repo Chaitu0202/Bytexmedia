@@ -2,42 +2,57 @@
 
 @theme {
   --color-navy-dark: #000000;
-  --color-navy-midnight: #05070D;
-  --color-navy-surface: #0B0F19;
-  --color-navy-elevated: #111827;
-  --color-accent-blue: #0066FF;
+  --color-navy-midnight: #050505;
+  --color-navy-surface: #0a0a0c;
+  --color-navy-elevated: #111114;
+  --color-accent-blue: #0052FE;
   --color-accent-cyan: #00D2FF;
-  --color-accent-violet: #7C3AED;
-  --color-accent-indigo: #4F46E5;
-  --color-border-navy: #1A253C;
-  --color-text-white: #FFFFFF;
-  --color-text-cool: #CBD5E1;
-  --color-text-muted: #94A3B8;
-  --color-status-green: #10B981;
-  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-light: rgba(255, 255, 255, 0.15);
+  --font-display: 'Syne', 'Inter Tight', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
 }
 
 @layer base {
   body {
     background-color: #000000;
     color: #FFFFFF;
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: 'Syne', sans-serif;
   }
 }
 
 /* Custom subtle scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #111827;
-  border-radius: 4px;
+  background: #18181b;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0066FF;
+  background: #27272a;
 }
 
+/* Dot-matrix style simulation */
+.dot-matrix-text {
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 1px rgba(255,255,255,0.8);
+}
+
+/* Subtle CRT scanline effect */
+.scanline-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+}

@@ -20,9 +20,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPrivacy, onOpe
   };
 
   return (
-    <footer id="main-footer" className="bg-[#000000] border-t border-[#1A253C] pt-16 pb-12 text-[#94A3B8]">
+    <footer id="main-footer" className="bg-[#000000] border-t border-white/10 pt-16 pb-12 text-[#94A3B8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#1A253C]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           {/* Col 1: Brand & Positioning */}
           <div className="lg:col-span-4 text-left">
             <button

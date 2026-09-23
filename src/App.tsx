@@ -147,6 +147,7 @@ export default function App() {
           <HomeOverview
             onNavigate={handleTabChange}
             onStartJourney={handleStartJourney}
+            onSelectProject={(project) => setSelectedProject(project)}
           />
         )}
 
