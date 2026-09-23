@@ -8,6 +8,8 @@ export interface ServiceItem {
   deliverables: string[];
   timeline: string;
   idealFor: string;
+  price?: string;
+  featuredPriceBadge?: string;
 }
 
 export interface ProjectItem {
@@ -59,6 +61,7 @@ export interface PackageItem {
   tagline: string;
   idealFor: string;
   pricingNote: string;
+  price?: string;
   features: string[];
   actionLabel: string;
 }
@@ -69,7 +72,7 @@ export interface ContactFormData {
   email: string;
   phoneNumber: string;
   service: string;
-  budget: string;
   preferredMethod: string;
   description: string;
 }
+

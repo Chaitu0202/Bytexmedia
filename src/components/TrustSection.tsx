@@ -5,30 +5,30 @@ import { TRUST_VALUES } from '../data/content';
 export const TrustSection: React.FC = () => {
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'MessageCircle': return <MessageCircle className="w-5 h-5 text-[#3B82F6]" />;
-      case 'Wrench': return <Wrench className="w-5 h-5 text-[#22D3EE]" />;
-      case 'FileCheck': return <FileCheck className="w-5 h-5 text-[#34D399]" />;
+      case 'MessageCircle': return <MessageCircle className="w-5 h-5 text-[#00D2FF]" />;
+      case 'Wrench': return <Wrench className="w-5 h-5 text-[#00A3FF]" />;
+      case 'FileCheck': return <FileCheck className="w-5 h-5 text-[#10B981]" />;
       case 'Users': return <Users className="w-5 h-5 text-[#8B5CF6]" />;
-      default: return <Shield className="w-5 h-5 text-[#3B82F6]" />;
+      default: return <Shield className="w-5 h-5 text-[#00D2FF]" />;
     }
   };
 
   return (
-    <section id="trust" className="py-20 md:py-28 bg-[#0A1024] relative border-t border-[#263653]/60">
+    <section id="trust" className="py-20 md:py-28 bg-[#000000] relative border-t border-[#1A253C]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-14 text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#101A33] border border-[#263653] text-[11px] font-semibold tracking-wider uppercase text-[#34D399] mb-3">
-            TRUST & PRINCIPLES
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B0F19] border border-[#1A253C] text-[11px] font-bold tracking-wider uppercase text-[#10B981] mb-3">
+            HONEST INTEGRITY • HIGH STANDARDS
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F8FAFC] tracking-tight leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
             Built on Communication.{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22D3EE] via-[#3B82F6] to-[#8B5CF6]">
-              Driven by Possibility.
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A3FF] via-[#00D2FF] to-white">
+              Driven by Value.
             </span>
           </h2>
           <p className="text-base sm:text-lg text-[#CBD5E1] leading-relaxed">
-            We don&apos;t invent testimonials or inflate metrics. We earn trust through responsiveness, modern engineering discipline, and transparent collaboration.
+            We don&apos;t invent testimonials or inflate metrics. We earn your business through responsive communication, upfront pricing, and fast turnarounds.
           </p>
         </div>
 
@@ -37,13 +37,13 @@ export const TrustSection: React.FC = () => {
           {TRUST_VALUES.map((val) => (
             <div
               key={val.title}
-              className="p-6 rounded-2xl bg-[#101A33] border border-[#263653] hover:border-[#3B82F6]/50 hover:bg-[#162342] transition-all duration-300 flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-[#0B0F19] border border-[#1A253C] hover:border-[#00D2FF]/50 hover:bg-[#111827] transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#0A1024] border border-[#263653] flex items-center justify-center mb-5">
+                <div className="w-12 h-12 rounded-xl bg-[#000000] border border-[#1A253C] flex items-center justify-center mb-5">
                   {getIcon(val.icon)}
                 </div>
-                <h3 className="text-lg font-bold text-[#F8FAFC] mb-2.5">
+                <h3 className="text-lg font-bold text-white mb-2.5">
                   {val.title}
                 </h3>
                 <p className="text-sm text-[#CBD5E1] leading-relaxed">
@@ -55,34 +55,34 @@ export const TrustSection: React.FC = () => {
         </div>
 
         {/* Verified Partnership Standards Bar */}
-        <div className="p-6 sm:p-7 rounded-2xl bg-[#050816] border border-[#263653] grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
+        <div className="p-6 sm:p-7 rounded-2xl bg-[#0B0F19] border border-[#1A253C] grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-[#101A33] border border-[#263653] flex items-center justify-center text-[#3B82F6] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#000000] border border-[#1A253C] flex items-center justify-center text-[#00D2FF] shrink-0">
               <CheckCircle2 className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-bold text-[#F8FAFC]">100% Code Ownership</div>
-              <div className="text-xs text-[#94A3B8]">You retain full IP and codebase rights.</div>
+              <div className="text-sm font-bold text-white">100% Code & Asset Ownership</div>
+              <div className="text-xs text-[#94A3B8]">You retain full IP and domain rights.</div>
             </div>
           </div>
 
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-[#101A33] border border-[#263653] flex items-center justify-center text-[#22D3EE] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#000000] border border-[#1A253C] flex items-center justify-center text-[#00A3FF] shrink-0">
               <CheckCircle2 className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-bold text-[#F8FAFC]">Milestone Reviews</div>
-              <div className="text-xs text-[#94A3B8]">Progress sign-offs before next phases.</div>
+              <div className="text-sm font-bold text-white">Milestone Previews</div>
+              <div className="text-xs text-[#94A3B8]">Live link inspection before finalizing.</div>
             </div>
           </div>
 
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-[#101A33] border border-[#263653] flex items-center justify-center text-[#8B5CF6] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#000000] border border-[#1A253C] flex items-center justify-center text-[#10B981] shrink-0">
               <CheckCircle2 className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-bold text-[#F8FAFC]">Post-Launch Handover</div>
-              <div className="text-xs text-[#94A3B8]">Comprehensive walkthrough and support.</div>
+              <div className="text-sm font-bold text-white">Support & Handover</div>
+              <div className="text-xs text-[#94A3B8]">Complete training to update your website easily.</div>
             </div>
           </div>
         </div>

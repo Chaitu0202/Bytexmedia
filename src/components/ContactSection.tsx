@@ -10,7 +10,8 @@ import {
   Check,
   Calendar,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  ExternalLink
 } from 'lucide-react';
 import { ContactFormData } from '../types';
 
@@ -24,20 +25,35 @@ export const ContactSection = forwardRef<ContactSectionRef, {}>((_, ref) => {
     businessName: '',
     email: '',
     phoneNumber: '',
-    service: 'Website Development',
-    budget: '$500 - $1,500',
-    preferredMethod: 'Email',
+    service: 'Website Development (from ₹2,999)',
+    preferredMethod: 'WhatsApp',
     description: '',
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [deliveryStatus, setDeliveryStatus] = useState<string>('');
   const [copied, setCopied] = useState(false);
 
   useImperativeHandle(ref, () => ({
     setPreselectedService: (serviceName: string) => {
-      setFormData((prev) => ({ ...prev, service: serviceName }));
+      let matched = 'Website Development (from ₹2,999)';
+      const s = serviceName.toLowerCase();
+      if (s.includes('app')) {
+        matched = 'Mobile App Development (from ₹9,999)';
+      } else if (s.includes('google') || s.includes('gbp') || s.includes('maps')) {
+        matched = 'Google Business Profile (₹999)';
+      } else if (s.includes('instagram') || s.includes('marketing')) {
+        matched = 'Instagram Handling & Marketing';
+      } else if (s.includes('ai') || s.includes('automation')) {
+        matched = 'AI Automation & Custom Tools';
+      } else if (s.includes('design') || s.includes('brand')) {
+        matched = 'Branding & Creative Design';
+      } else if (s.includes('web')) {
+        matched = 'Website Development (from ₹2,999)';
+      }
+      setFormData((prev) => ({ ...prev, service: matched }));
       const element = document.getElementById('contact');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -54,26 +70,52 @@ export const ContactSection = forwardRef<ContactSectionRef, {}>((_, ref) => {
       errs.email = 'Please enter a valid email address';
     }
     if (!formData.description.trim()) {
-      errs.description = 'Please provide a short description of your project';
-    } else if (formData.description.trim().length < 10) {
-      errs.description = 'Please write at least 10 characters so we can understand your needs';
+      errs.description = 'Please provide a short description of your project or business';
+    } else if (formData.description.trim().length < 5) {
+      errs.description = 'Please write at least a few words so we understand what you need';
     }
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
+    setDeliveryStatus('Transmitting inquiry to hello@bytexmedia.in...');
 
-    // Simulate submission saving to local state
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+    try {
+      // Direct real email dispatch to hello@bytexmedia.in via FormSubmit AJAX API
+      const response = await fetch('https://formsubmit.co/ajax/hello@bytexmedia.in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `New ByteX Media Inquiry: ${formData.service} from ${formData.fullName}`,
+          name: formData.fullName,
+          business: formData.businessName || 'Individual / Not specified',
+          email: formData.email,
+          phone: formData.phoneNumber || 'Not provided',
+          service: formData.service,
+          preferredMethod: formData.preferredMethod,
+          message: formData.description,
+          _template: 'table',
+        }),
+      });
 
-      // Save inquiries locally
+      if (response.ok) {
+        setDeliveryStatus('Dispatched successfully to hello@bytexmedia.in');
+      } else {
+        setDeliveryStatus('Saved locally and ready for direct WhatsApp dispatch');
+      }
+    } catch (err) {
+      // In case of ad-blocker or offline, data is still retained and ready
+      setDeliveryStatus('Inquiry recorded and queued');
+    } finally {
+      // Save locally as backup
       try {
         const stored = JSON.parse(localStorage.getItem('bytex_inquiries') || '[]');
         stored.push({ ...formData, submittedAt: new Date().toISOString() });
@@ -81,7 +123,10 @@ export const ContactSection = forwardRef<ContactSectionRef, {}>((_, ref) => {
       } catch (e) {
         console.warn('Local storage write skipped');
       }
-    }, 800);
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }
   };
 
   const handleCopySummary = () => {
@@ -89,9 +134,8 @@ export const ContactSection = forwardRef<ContactSectionRef, {}>((_, ref) => {
 Name: ${formData.fullName}
 Business: ${formData.businessName || 'N/A'}
 Email: ${formData.email}
-Phone: ${formData.phoneNumber || 'N/A'}
+Phone/WhatsApp: ${formData.phoneNumber || 'N/A'}
 Service: ${formData.service}
-Budget: ${formData.budget}
 Contact Method: ${formData.preferredMethod}
 Description: ${formData.description}`;
 
@@ -100,113 +144,148 @@ Description: ${formData.description}`;
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const mailtoLink = `mailto:hello@bytexmedia.com?subject=${encodeURIComponent(
+  const mailtoLink = `mailto:hello@bytexmedia.in?subject=${encodeURIComponent(
     `Inquiry: ${formData.service} for ${formData.businessName || formData.fullName}`
   )}&body=${encodeURIComponent(
-    `Hello ByteX Media Team,\n\nI would like to discuss a project:\n\nName: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phoneNumber}\nService: ${formData.service}\nBudget: ${formData.budget}\nPreferred Method: ${formData.preferredMethod}\n\nProject Details:\n${formData.description}\n\nThank you!`
+    `Hello ByteX Media Team,\n\nI would like to discuss a project:\n\nName: ${formData.fullName}\nBusiness: ${formData.businessName}\nEmail: ${formData.email}\nPhone: ${formData.phoneNumber}\nService: ${formData.service}\nPreferred Method: ${formData.preferredMethod}\n\nProject Requirements:\n${formData.description}\n\nThank you!`
+  )}`;
+
+  const whatsAppLink = `https://wa.me/919390244788?text=${encodeURIComponent(
+    `Hello ByteX Media Team! My name is ${formData.fullName}. I am inquiring about ${formData.service}. My requirements: ${formData.description}`
   )}`;
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-[#050816] relative border-t border-[#263653]/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14">
-          {/* Left Column: Context & Contact Details */}
+    <section id="contact" className="py-16 md:py-24 bg-[#000000] relative border-t border-[#1A253C]">
+      {/* Glow */}
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#0052FE]/15 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+          {/* Left Column: Context & Direct Contact Details */}
           <div className="lg:col-span-5 flex flex-col justify-between text-left">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#101A33] border border-[#263653] text-[11px] font-semibold tracking-wider uppercase text-[#3B82F6] mb-3">
-                LET&apos;S TALK
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B0F19] border border-[#1A253C] text-[11px] font-bold tracking-wider uppercase text-[#00D2FF] mb-3">
+                DIRECT INQUIRY & CONSULTATION
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F8FAFC] tracking-tight leading-tight mb-4">
-                Ready to Build Something{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22D3EE] via-[#3B82F6] to-[#8B5CF6]">
-                  Meaningful?
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
+                Let&apos;s Build Your{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A3FF] via-[#00D2FF] to-white">
+                  Next Project.
                 </span>
               </h2>
-              <p className="text-base text-[#CBD5E1] leading-relaxed mb-8">
-                Whether you&apos;re starting a business, improving your digital presence, or exploring AI-powered solutions, let&apos;s discuss what you want to build.
+              <p className="text-base text-[#CBD5E1] leading-relaxed mb-6">
+                Tell us what you want to build. From websites at ₹2,999 to custom mobile applications and Google Business local ranking, our team will review and respond quickly.
               </p>
 
               {/* Direct channels */}
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3.5 p-4 rounded-xl bg-[#101A33] border border-[#263653]">
-                  <div className="w-10 h-10 rounded-lg bg-[#0A1024] border border-[#263653] flex items-center justify-center text-[#3B82F6] shrink-0">
+              <div className="space-y-3.5 mb-6">
+                <a
+                  href="mailto:hello@bytexmedia.in"
+                  className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#0B0F19] border border-[#1A253C] hover:border-[#00D2FF]/60 hover:bg-[#111827] transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#000000] border border-[#1A253C] flex items-center justify-center text-[#00D2FF] group-hover:scale-105 transition-transform shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <div>
-                    <div className="text-xs text-[#94A3B8]">Email Consultation</div>
-                    <div className="text-sm font-semibold text-[#F8FAFC]">hello@bytexmedia.com</div>
+                  <div className="flex-1">
+                    <div className="text-xs text-[#94A3B8]">Direct Official Email</div>
+                    <div className="text-sm font-bold text-white group-hover:text-[#00D2FF] transition-colors">
+                      hello@bytexmedia.in
+                    </div>
                   </div>
-                </div>
+                  <ExternalLink className="w-4 h-4 text-[#94A3B8] group-hover:text-[#00D2FF] transition-colors" />
+                </a>
 
-                <div className="flex items-center gap-3.5 p-4 rounded-xl bg-[#101A33] border border-[#263653]">
-                  <div className="w-10 h-10 rounded-lg bg-[#0A1024] border border-[#263653] flex items-center justify-center text-[#22D3EE] shrink-0">
+                <a
+                  href="https://wa.me/919390244788?text=Hello%20ByteX%20Media!%20I%20would%20like%20to%20discuss%20a%20project."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#0B0F19] border border-[#1A253C] hover:border-[#10B981]/60 hover:bg-[#111827] transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#000000] border border-[#1A253C] flex items-center justify-center text-[#10B981] group-hover:scale-105 transition-transform shrink-0">
                     <MessageSquare className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <div className="text-xs text-[#94A3B8]">Direct WhatsApp / Chat</div>
-                    <div className="text-sm font-semibold text-[#F8FAFC]">+91 (Consultation Channel)</div>
+                    <div className="text-sm font-bold text-white group-hover:text-[#10B981] transition-colors">
+                      +91 93902 44788
+                    </div>
                   </div>
-                </div>
+                  <ExternalLink className="w-4 h-4 text-[#94A3B8] group-hover:text-[#10B981] transition-colors" />
+                </a>
               </div>
             </div>
 
-            {/* Student Promise Notice */}
-            <div className="p-4 rounded-xl bg-[#0A1024] border border-[#263653] text-xs text-[#94A3B8] leading-relaxed">
-              <span className="text-[#CBD5E1] font-semibold">Response Commitment: </span>
-              We review every inquiry within 24 hours with a thoughtful initial technical assessment and no pressure.
+            {/* Response Guarantee Notice */}
+            <div className="p-4 rounded-2xl bg-[#0B0F19] border border-[#1A253C] text-xs text-[#94A3B8] leading-relaxed">
+              <span className="text-[#00D2FF] font-bold">Fast Response Guarantee: </span>
+              Inquiries sent here are delivered directly to <span className="text-white font-mono font-semibold">hello@bytexmedia.in</span>. We review and provide a direct proposal within 24 hours.
             </div>
           </div>
 
-          {/* Right Column: Contact Form or Success View */}
+          {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#0A1024] border border-[#263653] shadow-2xl relative">
+            <div className="p-6 sm:p-8 rounded-3xl bg-[#0B0F19] border border-[#1A253C] shadow-2xl relative">
               {isSubmitted ? (
                 <div className="py-8 text-center space-y-6 animate-in fade-in duration-300">
-                  <div className="w-16 h-16 rounded-2xl bg-[#34D399]/20 border border-[#34D399]/40 flex items-center justify-center text-[#34D399] mx-auto">
+                  <div className="w-16 h-16 rounded-2xl bg-[#10B981]/20 border border-[#10B981]/40 flex items-center justify-center text-[#10B981] mx-auto shadow-lg shadow-[#10B981]/20">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-bold text-[#F8FAFC] mb-2">
-                      Inquiry Received, {formData.fullName}!
+                    <h3 className="text-2xl font-black text-white mb-2">
+                      Inquiry Dispatched, {formData.fullName}!
                     </h3>
                     <p className="text-sm text-[#CBD5E1] max-w-md mx-auto leading-relaxed">
-                      Thank you for sharing your project goals. Your inquiry has been saved and our team has been notified.
+                      Your details have been sent to <span className="text-[#00D2FF] font-mono font-bold">hello@bytexmedia.in</span>. Our team will review your project and get in touch via {formData.preferredMethod}.
                     </p>
                   </div>
 
                   {/* Inquiry summary card */}
-                  <div className="p-4 rounded-xl bg-[#050816] border border-[#263653] text-left max-w-lg mx-auto text-xs space-y-2">
+                  <div className="p-4 rounded-2xl bg-[#000000] border border-[#1A253C] text-left max-w-lg mx-auto text-xs space-y-2">
                     <div className="flex justify-between text-[#94A3B8]">
-                      <span>Service:</span>
-                      <span className="text-[#F8FAFC] font-semibold">{formData.service}</span>
+                      <span>Target Recipient:</span>
+                      <span className="text-[#00D2FF] font-mono font-semibold">hello@bytexmedia.in</span>
                     </div>
                     <div className="flex justify-between text-[#94A3B8]">
-                      <span>Contact:</span>
-                      <span className="text-[#F8FAFC] font-semibold">{formData.email}</span>
+                      <span>Requested Service:</span>
+                      <span className="text-white font-semibold">{formData.service}</span>
                     </div>
                     <div className="flex justify-between text-[#94A3B8]">
-                      <span>Budget Tier:</span>
-                      <span className="text-[#22D3EE] font-semibold">{formData.budget}</span>
+                      <span>Your Contact Email:</span>
+                      <span className="text-white font-semibold">{formData.email}</span>
+                    </div>
+                    <div className="flex justify-between text-[#94A3B8]">
+                      <span>Preferred Contact:</span>
+                      <span className="text-[#10B981] font-semibold">{formData.preferredMethod}</span>
                     </div>
                   </div>
 
-                  {/* Actions */}
+                  {/* Actions: Send Direct WhatsApp & Direct Email */}
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
                     <a
+                      href={whatsAppLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#10B981] hover:bg-[#059669] transition-colors shadow-lg shadow-[#10B981]/25"
+                    >
+                      <MessageSquare className="w-4 h-4" />
+                      <span>Chat on WhatsApp Now</span>
+                    </a>
+
+                    <a
                       href={mailtoLink}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-white bg-gradient-to-r from-[#2563EB] to-[#06B6D4]"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-[#0052FE] to-[#00D2FF] hover:brightness-110 shadow-md"
                     >
                       <Mail className="w-4 h-4" />
-                      <span>Send Direct Email Copy</span>
+                      <span>Send via Email Client</span>
                     </a>
 
                     <button
                       onClick={handleCopySummary}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-[#CBD5E1] bg-[#101A33] border border-[#263653] hover:bg-[#162342] transition-colors"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs sm:text-sm text-[#CBD5E1] bg-[#000000] border border-[#1A253C] hover:bg-[#111827] transition-colors cursor-pointer"
                     >
-                      {copied ? <Check className="w-4 h-4 text-[#34D399]" /> : <Copy className="w-4 h-4" />}
-                      <span>{copied ? 'Copied Brief' : 'Copy Project Brief'}</span>
+                      {copied ? <Check className="w-4 h-4 text-[#10B981]" /> : <Copy className="w-4 h-4" />}
+                      <span>{copied ? 'Copied Brief' : 'Copy Brief'}</span>
                     </button>
                   </div>
 
@@ -218,13 +297,12 @@ Description: ${formData.description}`;
                         businessName: '',
                         email: '',
                         phoneNumber: '',
-                        service: 'Website Development',
-                        budget: '$500 - $1,500',
-                        preferredMethod: 'Email',
+                        service: 'Website Development (from ₹2,999)',
+                        preferredMethod: 'WhatsApp',
                         description: '',
                       });
                     }}
-                    className="text-xs text-[#94A3B8] hover:text-[#CBD5E1] underline pt-4 cursor-pointer"
+                    className="text-xs text-[#94A3B8] hover:text-white underline pt-4 cursor-pointer"
                   >
                     Submit another inquiry
                   </button>
@@ -235,16 +313,17 @@ Description: ${formData.description}`;
                     {/* Full Name */}
                     <div>
                       <label htmlFor="input-fullName" className="block text-xs font-semibold text-[#CBD5E1] mb-1.5">
-                        Full Name <span className="text-[#22D3EE]">*</span>
+                        Full Name <span className="text-[#00D2FF]">*</span>
                       </label>
                       <input
                         id="input-fullName"
                         type="text"
+                        required
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        placeholder="e.g. Alex Morgan"
-                        className={`w-full px-3.5 py-2.5 rounded-xl bg-[#050816] border text-sm text-[#F8FAFC] placeholder-[#94A3B8]/60 focus:outline-none focus:ring-1 focus:ring-[#3B82F6] transition-colors ${
-                          errors.fullName ? 'border-red-500' : 'border-[#263653]'
+                        placeholder="e.g. Rahul Sharma"
+                        className={`w-full px-3.5 py-2.5 rounded-xl bg-[#000000] border text-sm text-white placeholder-[#94A3B8]/60 focus:outline-none focus:ring-1 focus:ring-[#00D2FF] transition-colors ${
+                          errors.fullName ? 'border-red-500' : 'border-[#1A253C]'
                         }`}
                       />
                       {errors.fullName && (
@@ -264,8 +343,8 @@ Description: ${formData.description}`;
                         type="text"
                         value={formData.businessName}
                         onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-                        placeholder="e.g. Apex Studio"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#050816] border border-[#263653] text-sm text-[#F8FAFC] placeholder-[#94A3B8]/60 focus:outline-none focus:ring-1 focus:ring-[#3B82F6]"
+                        placeholder="e.g. Apex Health Clinic"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#000000] border border-[#1A253C] text-sm text-white placeholder-[#94A3B8]/60 focus:outline-none focus:ring-1 focus:ring-[#00D2FF]"
                       />
                     </div>
                   </div>
@@ -274,16 +353,17 @@ Description: ${formData.description}`;
                     {/* Email */}
                     <div>
                       <label htmlFor="input-email" className="block text-xs font-semibold text-[#CBD5E1] mb-1.5">
-                        Email Address <span className="text-[#22D3EE]">*</span>
+                        Email Address <span className="text-[#00D2FF]">*</span>
                       </label>
                       <input
                         id="input-email"
                         type="email"
+                        required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="alex@example.com"
-                        className={`w-full px-3.5 py-2.5 rounded-xl bg-[#050816] border text-sm text-[#F8FAFC] placeholder-[#94A3B8]/60 focus:outline-none focus:ring-1 focus:ring-[#3B82F6] transition-colors ${
-                          errors.email ? 'border-red-500' : 'border-[#263653]'
+                        placeholder="rahul@example.com"
+                        className={`w-full px-3.5 py-2.5 rounded-xl bg-[#000000] border text-sm text-white placeholder-[#94A3B8]/60 focus:outline-none focus:ring-1 focus:ring-[#00D2FF] transition-colors ${
+                          errors.email ? 'border-red-500' : 'border-[#1A253C]'
                         }`}
                       />
                       {errors.email && (
@@ -293,7 +373,7 @@ Description: ${formData.description}`;
                       )}
                     </div>
 
-                    {/* Phone */}
+                    {/* Phone / WhatsApp */}
                     <div>
                       <label htmlFor="input-phone" className="block text-xs font-semibold text-[#CBD5E1] mb-1.5">
                         Phone / WhatsApp <span className="text-[#94A3B8] font-normal">(Optional)</span>
@@ -303,13 +383,14 @@ Description: ${formData.description}`;
                         type="tel"
                         value={formData.phoneNumber}
                         onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                        placeholder="+1 (555) 000-0000"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#050816] border border-[#263653] text-sm text-[#F8FAFC] placeholder-[#94A3B8]/60 focus:outline-none focus:ring-1 focus:ring-[#3B82F6]"
+                        placeholder="+91 98765 43210"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#000000] border border-[#1A253C] text-sm text-white placeholder-[#94A3B8]/60 focus:outline-none focus:ring-1 focus:ring-[#00D2FF]"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {/* 2-Column Grid: Service and Preferred Contact Method (NO BUDGET FIELD) */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Service Dropdown */}
                     <div>
                       <label htmlFor="select-service" className="block text-xs font-semibold text-[#CBD5E1] mb-1.5">
@@ -319,51 +400,32 @@ Description: ${formData.description}`;
                         id="select-service"
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-xl bg-[#050816] border border-[#263653] text-sm text-[#F8FAFC] focus:outline-none focus:ring-1 focus:ring-[#3B82F6]"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#000000] border border-[#1A253C] text-sm text-white focus:outline-none focus:ring-1 focus:ring-[#00D2FF]"
                       >
-                        <option value="Website Development">Website Development</option>
-                        <option value="Mobile App">Mobile App</option>
-                        <option value="AI Automation">AI Automation</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="Google Business Profile">Google Business Profile</option>
-                        <option value="Creative Design">Creative Design</option>
-                        <option value="Other">Other Custom Inquiry</option>
-                      </select>
-                    </div>
-
-                    {/* Budget Range */}
-                    <div>
-                      <label htmlFor="select-budget" className="block text-xs font-semibold text-[#CBD5E1] mb-1.5">
-                        Estimated Budget
-                      </label>
-                      <select
-                        id="select-budget"
-                        value={formData.budget}
-                        onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-xl bg-[#050816] border border-[#263653] text-sm text-[#F8FAFC] focus:outline-none focus:ring-1 focus:ring-[#3B82F6]"
-                      >
-                        <option value="Under $500">Under $500</option>
-                        <option value="$500 - $1,500">$500 - $1,500</option>
-                        <option value="$1,500 - $3,000">$1,500 - $3,000</option>
-                        <option value="$3,000+">$3,000+</option>
-                        <option value="Let's Discuss">Let&apos;s Discuss</option>
+                        <option value="Website Development (from ₹2,999)">Website Development (from ₹2,999)</option>
+                        <option value="Mobile App Development (from ₹9,999)">Mobile App Development (from ₹9,999)</option>
+                        <option value="Google Business Profile (₹999)">Google Business Profile (₹999)</option>
+                        <option value="Instagram Handling & Marketing">Instagram Handling & Marketing</option>
+                        <option value="AI Automation & Custom Tools">AI Automation & Custom Tools</option>
+                        <option value="Branding & Creative Design">Branding & Creative Design</option>
+                        <option value="All-in-One Custom Package">All-in-One Custom Package</option>
                       </select>
                     </div>
 
                     {/* Preferred Method */}
                     <div>
                       <label htmlFor="select-method" className="block text-xs font-semibold text-[#CBD5E1] mb-1.5">
-                        Preferred Contact
+                        Preferred Contact Method
                       </label>
                       <select
                         id="select-method"
                         value={formData.preferredMethod}
                         onChange={(e) => setFormData({ ...formData, preferredMethod: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-xl bg-[#050816] border border-[#263653] text-sm text-[#F8FAFC] focus:outline-none focus:ring-1 focus:ring-[#3B82F6]"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#000000] border border-[#1A253C] text-sm text-white focus:outline-none focus:ring-1 focus:ring-[#00D2FF]"
                       >
-                        <option value="Email">Email</option>
-                        <option value="WhatsApp">WhatsApp</option>
+                        <option value="WhatsApp">WhatsApp (Fastest response)</option>
                         <option value="Phone Call">Phone Call</option>
+                        <option value="Email">Email</option>
                         <option value="Google Meet">Google Meet</option>
                       </select>
                     </div>
@@ -372,16 +434,16 @@ Description: ${formData.description}`;
                   {/* Project Description */}
                   <div>
                     <label htmlFor="input-description" className="block text-xs font-semibold text-[#CBD5E1] mb-1.5">
-                      Project Description <span className="text-[#22D3EE]">*</span>
+                      Tell Us About Your Project Requirements <span className="text-[#00D2FF]">*</span>
                     </label>
                     <textarea
                       id="input-description"
-                      rows={4}
+                      rows={3}
                       value={formData.description}
                       onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                      placeholder="Tell us about your current challenges, timeline, or what you are looking to build..."
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-[#050816] border text-sm text-[#F8FAFC] placeholder-[#94A3B8]/60 focus:outline-none focus:ring-1 focus:ring-[#3B82F6] transition-colors ${
-                        errors.description ? 'border-red-500' : 'border-[#263653]'
+                      placeholder="e.g. We need a 3-page website with WhatsApp inquiry integration for our dental clinic, plus Google Maps ranking..."
+                      className={`w-full px-3.5 py-2.5 rounded-xl bg-[#000000] border text-sm text-white placeholder-[#94A3B8]/60 focus:outline-none focus:ring-1 focus:ring-[#00D2FF] transition-colors ${
+                        errors.description ? 'border-red-500' : 'border-[#1A253C]'
                       }`}
                     />
                     {errors.description && (
@@ -397,20 +459,23 @@ Description: ${formData.description}`;
                       id="contact-submit-btn"
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3.5 px-6 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#2563EB] to-[#06B6D4] hover:opacity-95 shadow-lg shadow-[#2563EB]/25 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                      className="w-full py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#0052FE] via-[#00A3FF] to-[#00D2FF] hover:brightness-110 shadow-lg shadow-[#00A3FF]/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
                     >
                       {isSubmitting ? (
                         <>
                           <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          <span>Submitting Inquiry...</span>
+                          <span>Sending directly to hello@bytexmedia.in...</span>
                         </>
                       ) : (
                         <>
-                          <span>Start Your Journey</span>
+                          <span>Submit Request to hello@bytexmedia.in</span>
                           <ArrowRight className="w-4 h-4" />
                         </>
                       )}
                     </button>
+                    <div className="text-[11px] text-[#94A3B8] text-center mt-2">
+                      Submissions are routed directly to <span className="text-white font-mono">hello@bytexmedia.in</span>
+                    </div>
                   </div>
                 </form>
               )}

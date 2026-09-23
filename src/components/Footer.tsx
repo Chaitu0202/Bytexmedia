@@ -1,160 +1,239 @@
 import React from 'react';
-import { Linkedin, Instagram, Youtube, Github, ArrowUp, Shield, FileText } from 'lucide-react';
+import { Linkedin, Instagram, Youtube, Github, ArrowUp, Shield, FileText, Mail, Phone } from 'lucide-react';
+import { ByteXLogo } from './ByteXLogo';
+import { NavTab } from './Navbar';
 
 interface FooterProps {
+  onNavigate: (tab: NavTab) => void;
   onOpenPrivacy: () => void;
   onOpenTerms: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenTerms }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPrivacy, onOpenTerms }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleNav = (tab: NavTab) => {
+    onNavigate(tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer id="main-footer" className="bg-[#0A1024] border-t border-[#263653] pt-16 pb-12 text-[#94A3B8]">
+    <footer id="main-footer" className="bg-[#000000] border-t border-[#1A253C] pt-16 pb-12 text-[#94A3B8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#263653]/60">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#1A253C]">
           {/* Col 1: Brand & Positioning */}
           <div className="lg:col-span-4 text-left">
-            <a href="#hero" className="flex items-center gap-3 group mb-4">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#3B82F6] to-[#22D3EE] p-[1.5px] flex items-center justify-center shadow-md">
-                <div className="w-full h-full bg-[#050816] rounded-[10px] flex items-center justify-center">
-                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#22D3EE] to-[#8B5CF6] text-sm tracking-tighter">
-                    BX
-                  </span>
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-base font-bold tracking-tight text-[#F8FAFC]">
-                  ByteX <span className="text-[#3B82F6]">Media</span>
-                </span>
-                <span className="text-[10px] font-semibold text-[#94A3B8] uppercase tracking-wider">
-                  Build • Market • Grow
-                </span>
-              </div>
-            </a>
+            <button
+              onClick={() => handleNav('home')}
+              className="inline-block mb-4 text-left bg-transparent border-0 p-0 cursor-pointer"
+            >
+              <ByteXLogo size="md" showTagline={true} showSubtext={true} />
+            </button>
 
-            <p className="text-xs sm:text-sm text-[#CBD5E1] leading-relaxed mb-6 max-w-sm">
-              Student-powered technology and digital growth solutions for ambitious businesses. We help you move from zero to hero through modern engineering and growth strategy.
+            <p className="text-xs sm:text-sm text-[#CBD5E1] leading-relaxed mb-4 max-w-sm mt-2">
+              Transforming businesses with high-converting websites (₹2,999), custom mobile apps (₹9,999), Google Business Profile optimization (₹999), and Instagram handling.
             </p>
+
+            <div className="text-xs text-[#CBD5E1] mb-5 flex flex-col gap-1.5 font-mono">
+              <a
+                href="mailto:hello@bytexmedia.in"
+                className="flex items-center gap-2 hover:text-[#00D2FF] transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5 text-[#00D2FF]" />
+                <span>hello@bytexmedia.in</span>
+              </a>
+              <a
+                href="https://wa.me/919390244788"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-[#10B981] transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#10B981]" />
+                <span>+91 93902 44788</span>
+              </a>
+            </div>
 
             {/* Social Channels */}
             <div className="flex items-center gap-3">
-              <a
-                href="https://linkedin.com/company/bytex-media"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                className="w-9 h-9 rounded-xl bg-[#101A33] border border-[#263653] flex items-center justify-center text-[#CBD5E1] hover:text-[#3B82F6] hover:border-[#3B82F6]/50 transition-colors"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
               <a
                 href="https://instagram.com/bytexmedia"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-xl bg-[#101A33] border border-[#263653] flex items-center justify-center text-[#CBD5E1] hover:text-[#22D3EE] hover:border-[#22D3EE]/50 transition-colors"
+                className="w-9 h-9 rounded-xl bg-[#0B0F19] border border-[#1A253C] flex items-center justify-center text-white hover:text-[#00D2FF] hover:border-[#00D2FF]/60 transition-colors"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://youtube.com/@bytexmedia"
+                href="https://linkedin.com/company/bytex-media"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="YouTube"
-                className="w-9 h-9 rounded-xl bg-[#101A33] border border-[#263653] flex items-center justify-center text-[#CBD5E1] hover:text-red-400 hover:border-red-400/50 transition-colors"
+                aria-label="LinkedIn"
+                className="w-9 h-9 rounded-xl bg-[#0B0F19] border border-[#1A253C] flex items-center justify-center text-white hover:text-[#00A3FF] hover:border-[#00A3FF]/60 transition-colors"
               >
-                <Youtube className="w-4 h-4" />
+                <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href="https://github.com/bytexmedia"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="w-9 h-9 rounded-xl bg-[#101A33] border border-[#263653] flex items-center justify-center text-[#CBD5E1] hover:text-white hover:border-white/50 transition-colors"
+                className="w-9 h-9 rounded-xl bg-[#0B0F19] border border-[#1A253C] flex items-center justify-center text-white hover:text-[#00D2FF] hover:border-[#00D2FF]/60 transition-colors"
               >
                 <Github className="w-4 h-4" />
+              </a>
+              <a
+                href="https://youtube.com/@bytexmedia"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="YouTube"
+                className="w-9 h-9 rounded-xl bg-[#0B0F19] border border-[#1A253C] flex items-center justify-center text-white hover:text-red-500 hover:border-red-500/60 transition-colors"
+              >
+                <Youtube className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Col 2: Company Navigation */}
+          {/* Col 2: Navigation Pages */}
           <div className="lg:col-span-3 text-left">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[#F8FAFC] mb-4">
-              Company
+            <h4 className="text-xs font-mono uppercase tracking-wider text-white mb-4">
+              Navigation
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <a href="#about" className="hover:text-[#F8FAFC] transition-colors">About ByteX Media</a>
+                <button
+                  onClick={() => handleNav('home')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Home / Overview
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#F8FAFC] transition-colors">Our Capabilities</a>
+                <button
+                  onClick={() => handleNav('services')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Services & Pricing
+                </button>
               </li>
               <li>
-                <a href="#process" className="hover:text-[#F8FAFC] transition-colors">Zero to Hero Journey</a>
+                <button
+                  onClick={() => handleNav('work')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Our Work & Case Studies
+                </button>
               </li>
               <li>
-                <a href="#work" className="hover:text-[#F8FAFC] transition-colors">Featured Projects</a>
+                <button
+                  onClick={() => handleNav('ai')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  AI Workflow Automations
+                </button>
               </li>
               <li>
-                <a href="#packages" className="hover:text-[#F8FAFC] transition-colors">Packages & Scope</a>
+                <button
+                  onClick={() => handleNav('about')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  About & Zero to Hero Roadmap
+                </button>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#F8FAFC] transition-colors">Contact & Inquiries</a>
+                <button
+                  onClick={() => handleNav('contact')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Contact & Inquiries
+                </button>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Services */}
+          {/* Col 3: Core Offerings */}
           <div className="lg:col-span-3 text-left">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[#F8FAFC] mb-4">
-              Core Services
+            <h4 className="text-xs font-mono uppercase tracking-wider text-white mb-4">
+              Core Offerings
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <a href="#services" className="hover:text-[#F8FAFC] transition-colors">Modern Web Development</a>
+                <button
+                  onClick={() => handleNav('services')}
+                  className="w-full hover:text-white transition-colors flex items-center justify-between pr-4 cursor-pointer text-left"
+                >
+                  <span>Website Development</span>
+                  <span className="text-[11px] font-mono text-[#00D2FF] font-bold">₹2,999</span>
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#F8FAFC] transition-colors">Mobile App Solutions</a>
+                <button
+                  onClick={() => handleNav('services')}
+                  className="w-full hover:text-white transition-colors flex items-center justify-between pr-4 cursor-pointer text-left"
+                >
+                  <span>Mobile App Development</span>
+                  <span className="text-[11px] font-mono text-[#00A3FF] font-bold">₹9,999</span>
+                </button>
               </li>
               <li>
-                <a href="#ai-solutions" className="hover:text-[#F8FAFC] transition-colors">AI & Workflow Automation</a>
+                <button
+                  onClick={() => handleNav('services')}
+                  className="w-full hover:text-white transition-colors flex items-center justify-between pr-4 cursor-pointer text-left"
+                >
+                  <span>Google Business Profile</span>
+                  <span className="text-[11px] font-mono text-[#10B981] font-bold">₹999</span>
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#F8FAFC] transition-colors">Digital Marketing & SEO</a>
+                <button
+                  onClick={() => handleNav('services')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Instagram Handling & Growth
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#F8FAFC] transition-colors">Google Business Profile</a>
+                <button
+                  onClick={() => handleNav('ai')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  AI Automation & Chatbots
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#F8FAFC] transition-colors">Brand & Creative Design</a>
+                <button
+                  onClick={() => handleNav('services')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Creative Branding & Design
+                </button>
               </li>
             </ul>
           </div>
 
           {/* Col 4: Resources & Legal */}
           <div className="lg:col-span-2 text-left">
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[#F8FAFC] mb-4">
-              Resources
+            <h4 className="text-xs font-mono uppercase tracking-wider text-white mb-4">
+              Legal & Trust
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <button
                   onClick={onOpenPrivacy}
-                  className="hover:text-[#F8FAFC] transition-colors text-left flex items-center gap-1.5 cursor-pointer"
+                  className="hover:text-white transition-colors text-left flex items-center gap-1.5 cursor-pointer"
                 >
-                  <Shield className="w-3.5 h-3.5 text-[#3B82F6]" />
+                  <Shield className="w-3.5 h-3.5 text-[#00D2FF]" />
                   <span>Privacy Policy</span>
                 </button>
               </li>
               <li>
                 <button
                   onClick={onOpenTerms}
-                  className="hover:text-[#F8FAFC] transition-colors text-left flex items-center gap-1.5 cursor-pointer"
+                  className="hover:text-white transition-colors text-left flex items-center gap-1.5 cursor-pointer"
                 >
-                  <FileText className="w-3.5 h-3.5 text-[#22D3EE]" />
+                  <FileText className="w-3.5 h-3.5 text-[#00A3FF]" />
                   <span>Terms of Service</span>
                 </button>
               </li>
@@ -167,12 +246,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenTerms }) =>
           <div className="flex items-center gap-2">
             <span>© {new Date().getFullYear()} ByteX Media. All rights reserved.</span>
             <span>•</span>
-            <span className="text-[#CBD5E1]">Student-Powered Innovation</span>
+            <span className="text-[#00D2FF] font-medium">hello@bytexmedia.in</span>
           </div>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#101A33] border border-[#263653] hover:text-white hover:border-[#3B82F6]/40 transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0B0F19] border border-[#1A253C] hover:text-white hover:border-[#00D2FF]/50 transition-colors cursor-pointer"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />

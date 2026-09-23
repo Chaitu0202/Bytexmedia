@@ -3,105 +3,117 @@ import { ServiceItem, ProjectItem, ProcessStepItem, AIWorkflowItem, PackageItem 
 export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'web-development',
-    title: 'Web Development',
+    title: 'Website Development',
     category: 'Engineering',
     iconName: 'Code',
-    description: 'Modern, responsive websites designed to represent your brand and support your business goals.',
+    price: '₹2,999',
+    featuredPriceBadge: 'Starting at ₹2,999',
+    description: 'Modern, responsive, ultra-fast websites designed to convert visitors and represent your brand with high authority.',
     features: [
-      'Business websites & portfolios',
-      'High-converting landing pages',
-      'E-commerce platforms',
-      'Responsive UI/UX architecture',
-      'Performance & SEO optimization',
-      'CMS integration & website revamps'
+      'Complete business website & modern UI',
+      'High-converting landing page structure',
+      'Mobile-first & tablet responsive design',
+      'Sub-second loading speed & SEO basics',
+      'Contact form & direct WhatsApp chat button',
+      'Free deployment & hosting configuration'
     ],
-    deliverables: ['Custom codebase', 'Mobile & tablet responsiveness', 'Fast load times (<1.5s)', 'SEO metadata setup', 'Source code & deployment'],
-    timeline: '1 to 4 weeks depending on scope',
-    idealFor: 'Startups, local businesses, and modern brands seeking high credibility and seamless user experience.'
+    deliverables: ['Custom codebase', 'Mobile & tablet responsiveness', 'Instant load time', 'Domain & hosting setup', '100% code ownership'],
+    timeline: '3 to 5 business days',
+    idealFor: 'Businesses, startups, doctors, stores, and creators needing a high-converting website at an unbeatable price point.'
   },
   {
     id: 'mobile-apps',
-    title: 'Mobile Apps',
+    title: 'Mobile App Development',
     category: 'Engineering',
     iconName: 'Smartphone',
-    description: 'Design and development solutions for mobile experiences that bring your ideas to life.',
+    price: '₹9,999',
+    featuredPriceBadge: 'Starting at ₹9,999',
+    description: 'Full-featured mobile application development solutions that turn your idea into a sleek, high-performance app.',
     features: [
-      'Mobile application concepts & wireframing',
-      'Intuitive UI/UX product design',
-      'Cross-platform development (React Native)',
-      'App improvement and feature iteration',
-      'Offline caching & responsive states'
+      'Cross-platform iOS & Android mobile application',
+      'Modern, intuitive UI/UX product design',
+      'User authentication & clean database connection',
+      'Push notification & customer engagement setup',
+      'App store & Play store submission assistance'
     ],
-    deliverables: ['Interactive design prototype', 'Clean frontend application', 'API integration ready', 'App store preparation guide'],
-    timeline: '3 to 8 weeks depending on features',
-    idealFor: 'Entrepreneurs and service providers needing a dedicated mobile touchpoint for users.'
-  },
-  {
-    id: 'ai-automation',
-    title: 'AI Automation',
-    category: 'Intelligence',
-    iconName: 'Sparkles',
-    description: 'Explore practical AI-powered workflows and integrations that can reduce repetitive tasks.',
-    features: [
-      'Custom AI assistants & chatbots',
-      'Repetitive workflow automations',
-      'Business process integrations',
-      'Document parsing & smart summaries',
-      'Human review & approval guardrails'
-    ],
-    deliverables: ['Automated pipeline diagram', 'Webhook & API integrations', 'Fallback handling logic', 'Safety check system'],
-    timeline: '1 to 3 weeks',
-    idealFor: 'Businesses spending too many manual hours on inquiries, scheduling, or recurring data entry.'
-  },
-  {
-    id: 'digital-marketing',
-    title: 'Digital Marketing',
-    category: 'Growth',
-    iconName: 'TrendingUp',
-    description: 'Creative and data-informed digital marketing solutions for businesses that want to strengthen their online presence.',
-    features: [
-      'Strategic social media marketing',
-      'Organic Search Engine Optimization (SEO)',
-      'Targeted content planning & calendars',
-      'Performance marketing & digital ads',
-      'Audience analytics & tracking insights'
-    ],
-    deliverables: ['Monthly content strategy', 'Target audience research', 'SEO keyword mapping', 'Transparent reporting'],
-    timeline: 'Ongoing monthly engagement',
-    idealFor: 'Brands that have a great product but need consistent visibility and customer discovery.'
+    deliverables: ['Interactive design prototype', 'Production mobile app build', 'API integrations', 'Store readiness checklist'],
+    timeline: '2 to 3 weeks',
+    idealFor: 'Entrepreneurs, service providers, and brands ready to launch their own branded smartphone app.'
   },
   {
     id: 'google-business-profile',
     title: 'Google Business Profile',
     category: 'Local SEO',
     iconName: 'MapPin',
-    description: 'Help businesses maintain an informative and consistent local online presence.',
+    price: '₹999',
+    featuredPriceBadge: 'Only ₹999',
+    description: 'Professional setup, optimization, and local ranking boost so customers in your city find you first on Google Maps.',
     features: [
-      'Profile setup and optimization',
-      'Business information & NAP consistency',
-      'Local photo & catalog updates',
-      'Review-response strategy guidance',
-      'Local search discovery support'
+      'Complete profile creation, verification & audit',
+      'Google Maps 100% NAP consistency optimization',
+      'High-impact service categories & keyword enrichment',
+      'Photos, catalog & business hours integration',
+      'Customer review generation templates & strategy'
     ],
-    deliverables: ['Fully optimized GBP profile', 'Category & attribute audit', 'Customer review templates', 'Local citation checklist'],
-    timeline: '3 to 7 business days',
-    idealFor: 'Local businesses, clinics, restaurants, and service providers wanting to show up in neighborhood searches.'
+    deliverables: ['Fully verified & optimized GBP', 'Local search discovery checklist', 'Customer review toolkit', 'Ongoing maintenance guide'],
+    timeline: '24 to 48 hours',
+    idealFor: 'Local businesses, clinics, restaurants, retail shops, and agencies seeking immediate nearby walk-in customers.'
+  },
+  {
+    id: 'digital-marketing',
+    title: 'Digital Marketing & Instagram Handling',
+    category: 'Growth',
+    iconName: 'TrendingUp',
+    price: 'Custom / Monthly',
+    featuredPriceBadge: 'Monthly Growth Plans',
+    description: 'Data-informed digital marketing and Instagram handling to generate more inquiries and sales for your business.',
+    features: [
+      'Complete Instagram profile handling & aesthetic revamp',
+      'Engaging Reels, carousel posts & campaign design',
+      'Targeted local audience growth & hashtag strategy',
+      'Paid ad campaign management (Meta / Google Ads)',
+      'Direct lead generation & monthly performance reports'
+    ],
+    deliverables: ['Monthly content calendar', 'Custom brand creatives', 'Targeted ad setup', 'Transparent ROI report'],
+    timeline: 'Ongoing monthly engagement',
+    idealFor: 'Brands that want consistent social media engagement, more followers, and measurable business sales.'
+  },
+  {
+    id: 'ai-automation',
+    title: 'AI Automation & Custom Tools',
+    category: 'Intelligence',
+    iconName: 'Sparkles',
+    price: 'Custom Scope',
+    featuredPriceBadge: 'Practical AI Tools',
+    description: 'Explore practical AI-powered workflows and automations that eliminate manual work and capture customer leads 24/7.',
+    features: [
+      'Custom AI website assistants & lead bots',
+      'Repetitive workflow automations (Notion/CRM/Slack)',
+      'Smart customer query triage & email responders',
+      'Document parsing & automated order notification webhooks',
+      'Human-in-the-loop review guardrails'
+    ],
+    deliverables: ['Automated pipeline diagram', 'Webhook & API integrations', 'Error handling logic', 'Safety check system'],
+    timeline: '1 to 2 weeks',
+    idealFor: 'Businesses spending too many hours manually answering repetitive inquiries or copying customer data.'
   },
   {
     id: 'creative-design',
-    title: 'Creative Design',
+    title: 'Branding & Creative Design',
     category: 'Branding',
     iconName: 'Palette',
-    description: 'Build a recognizable visual identity with creative assets designed for your brand.',
+    price: 'Custom Scope',
+    featuredPriceBadge: 'Visual Identity',
+    description: 'Build a recognizable visual identity with creative assets designed to leave an unforgettable impression.',
     features: [
-      'Complete brand identity & logo design',
-      'Social media creative kits & banners',
-      'Marketing collateral & graphic design',
-      'Short-form video editing for Reels/TikTok',
-      'Campaign visuals and presentation decks'
+      'Modern brand logo & vector identity suite',
+      'High-impact social media creative templates',
+      'Short-form video editing for Reels & TikTok',
+      'Business cards, banners & presentation decks',
+      'Typography & color design system'
     ],
-    deliverables: ['Vector brand identity kit', 'Typography & color styleguide', 'Editable Figma/Canva templates', 'Exported social assets'],
-    timeline: '1 to 2 weeks',
+    deliverables: ['Vector logo package', 'Styleguide & color palette', 'Figma/Canva editable templates', 'Exported graphics'],
+    timeline: '3 to 5 business days',
     idealFor: 'New ventures launching their identity or established brands needing a fresh, modern aesthetic.'
   }
 ];
@@ -111,8 +123,8 @@ export const BUSINESS_CHALLENGES = [
     id: 'discovery',
     icon: 'Compass',
     title: 'Hard to Get Discovered',
-    description: 'Businesses struggle to establish a clear digital presence and reach relevant audiences in crowded local and online markets.',
-    solution: 'Unified SEO, Google Business optimization, and focused social media visibility tailored to your specific audience.'
+    description: 'Businesses struggle to establish a clear digital presence and reach relevant local customers on Google and Instagram.',
+    solution: 'Google Business Profile for just ₹999 plus targeted social media handling to make your business prominently visible.'
   },
   {
     id: 'manual-work',
@@ -124,9 +136,9 @@ export const BUSINESS_CHALLENGES = [
   {
     id: 'outdated-experience',
     icon: 'MonitorX',
-    title: 'Outdated Digital Experience',
-    description: 'Slow, clunky, or non-mobile-friendly websites fail to communicate the actual quality and professionalism of your business.',
-    solution: 'Fast, responsive, modern digital interfaces that load instantly and convert visitors into engaged customers.'
+    title: 'Outdated or Missing Website',
+    description: 'Without a fast, modern website, potential customers question your credibility and buy from competitors instead.',
+    solution: 'Launch a professional, mobile-responsive website for just ₹2,999 delivered within days.'
   },
   {
     id: 'disconnected-growth',
@@ -174,7 +186,7 @@ export const FEATURED_PROJECTS: ProjectItem[] = [
     title: 'Modern Retail & Apparel Storefront',
     category: 'Websites',
     categoryLabel: 'Web Development',
-    description: 'A lightning-fast, high-converting e-commerce web platform built for a boutique retail brand, featuring fluid product filtering and seamless checkout UX.',
+    description: 'A lightning-fast, high-converting e-commerce web platform built for a retail brand, featuring fluid product filtering and seamless checkout UX.',
     intendedUseCase: 'Direct-to-consumer online sales with sub-second page loads and mobile-optimized cart flows.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Stripe Integration', 'Vite'],
     highlights: [
@@ -382,53 +394,57 @@ export const AI_WORKFLOWS: AIWorkflowItem[] = [
 export const PACKAGES_DATA: PackageItem[] = [
   {
     id: 'starter',
-    name: 'Digital Kickstart',
-    tagline: 'For small businesses and creators taking their first serious step online.',
-    idealFor: 'Startups, independent practitioners & local businesses.',
-    pricingNote: 'Custom quote based on scope • Transparent milestone billing',
+    name: 'Website Development',
+    badge: 'Best Seller',
+    tagline: 'Get your business live online with a high-converting, lightning-fast website.',
+    idealFor: 'Small businesses, professionals, local shops & startups.',
+    price: '₹2,999',
+    pricingNote: 'One-time investment • No hidden recurring platform fees',
     features: [
-      'Modern 1-3 page responsive business website',
-      'Google Business Profile setup & local optimization',
-      'Fundamental brand identity & social media kit',
-      'Mobile-optimized design with high accessibility',
-      'Basic contact form & WhatsApp inquiry button',
-      '1-on-1 strategy & onboarding session'
+      'Complete modern responsive business website',
+      'Mobile, tablet & desktop layout optimization',
+      'WhatsApp direct inquiry click-to-chat integration',
+      'Ultra-fast load time (Core Web Vitals optimized)',
+      'Basic SEO & social sharing preview tags',
+      'Fast 3-5 day delivery & free deployment setup'
     ],
-    actionLabel: 'Get Started →'
-  },
-  {
-    id: 'growth',
-    name: 'Growth Engine',
-    isPopular: true,
-    badge: 'Most Popular',
-    tagline: 'For businesses looking to actively expand visibility, acquire customers, and upgrade tech.',
-    idealFor: 'Growing companies ready for coordinated marketing and modern web performance.',
-    pricingNote: 'Custom quote based on scope • Monthly or milestone engagement',
-    features: [
-      'Multi-page custom website or web application revamp',
-      'Full SEO audit, keyword mapping & on-page optimization',
-      'Social media marketing strategy & monthly creative assets',
-      'Google Business Profile active management & updates',
-      'Lead capture automations & CRM notification webhooks',
-      'Priority communication & monthly growth reporting'
-    ],
-    actionLabel: 'Explore Growth →'
+    actionLabel: 'Get Web Dev for ₹2,999 →'
   },
   {
     id: 'pro',
-    name: 'All-in-One Solution',
-    tagline: 'For ambitious ventures needing tailored technology, custom apps, and AI automations.',
-    idealFor: 'Scaling businesses requiring custom software, apps, and dedicated technical partnership.',
-    pricingNote: 'Custom quote based on scope • Dedicated development sprint',
+    name: 'Mobile App Development',
+    isPopular: true,
+    badge: 'High Value',
+    tagline: 'Custom smartphone application built for iOS & Android to scale your business.',
+    idealFor: 'Companies ready for dedicated client apps, booking, e-commerce, or tools.',
+    price: '₹9,999',
+    pricingNote: 'Starting at ₹9,999 • Milestone-based delivery',
     features: [
-      'Full-stack web application or mobile app development',
-      'Custom AI assistant or tailored workflow integration',
-      'End-to-end brand redesign & high-fidelity design system',
-      'Comprehensive multi-channel digital marketing roadmap',
-      'API integrations with existing company databases/tools',
-      'Ongoing technical maintenance, updates & support'
+      'Cross-platform iOS & Android mobile application',
+      'Custom UI/UX designed around your brand',
+      'Fast responsive performance & offline caching',
+      'Push notification & customer alerts capability',
+      'Database & authentication ready structure',
+      'App store preparation & technical deployment support'
     ],
-    actionLabel: 'Discuss Your Project →'
+    actionLabel: 'Build App for ₹9,999 →'
+  },
+  {
+    id: 'local-gbp',
+    name: 'Google Business Profile',
+    tagline: 'Get discovered by local customers searching on Google Maps and nearby search.',
+    idealFor: 'Local businesses, clinics, restaurants, retail stores & consultants.',
+    price: '₹999',
+    pricingNote: 'Complete setup & optimization for just ₹999',
+    features: [
+      'Complete profile creation, verification & audit',
+      'Google Maps 100% NAP consistency optimization',
+      'Category & high-intent local keyword optimization',
+      'Business hours, services, products & photo uploads',
+      'Customer review generation toolkit & templates',
+      'Quick 24-48 hour delivery'
+    ],
+    actionLabel: 'Optimize GBP for ₹999 →'
   }
 ];
 
@@ -454,3 +470,4 @@ export const TRUST_VALUES = [
     description: 'We treat your business with the care of true partners. You have complete visibility at each stage of the Zero to Hero journey.'
   }
 ];
+

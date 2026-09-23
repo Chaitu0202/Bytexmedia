@@ -37,54 +37,54 @@ export const AISolutionsSection: React.FC<AISolutionsSectionProps> = ({ onStartJ
 
   const getStepIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Inbox': return <Inbox className="w-4 h-4 text-[#3B82F6]" />;
+      case 'Inbox': return <Inbox className="w-4 h-4 text-[#00D2FF]" />;
       case 'Cpu': return <Cpu className="w-4 h-4 text-[#8B5CF6]" />;
       case 'UserCheck': return <UserCheck className="w-4 h-4 text-amber-400" />;
-      case 'Send': return <Send className="w-4 h-4 text-[#34D399]" />;
-      case 'MessageSquare': return <MessageSquare className="w-4 h-4 text-[#3B82F6]" />;
-      case 'Search': return <Search className="w-4 h-4 text-[#22D3EE]" />;
+      case 'Send': return <Send className="w-4 h-4 text-[#10B981]" />;
+      case 'MessageSquare': return <MessageSquare className="w-4 h-4 text-[#00D2FF]" />;
+      case 'Search': return <Search className="w-4 h-4 text-[#00A3FF]" />;
       case 'FileText': return <FileText className="w-4 h-4 text-[#8B5CF6]" />;
-      case 'ShieldCheck': return <ShieldCheck className="w-4 h-4 text-[#34D399]" />;
-      case 'Target': return <Target className="w-4 h-4 text-[#3B82F6]" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-4 h-4 text-[#10B981]" />;
+      case 'Target': return <Target className="w-4 h-4 text-[#00D2FF]" />;
       case 'PenTool': return <PenTool className="w-4 h-4 text-[#8B5CF6]" />;
       case 'Edit3': return <Edit3 className="w-4 h-4 text-amber-400" />;
-      case 'Calendar': return <Calendar className="w-4 h-4 text-[#34D399]" />;
-      case 'Layers': return <Layers className="w-4 h-4 text-[#3B82F6]" />;
-      case 'CheckSquare': return <CheckSquare className="w-4 h-4 text-[#22D3EE]" />;
+      case 'Calendar': return <Calendar className="w-4 h-4 text-[#10B981]" />;
+      case 'Layers': return <Layers className="w-4 h-4 text-[#00D2FF]" />;
+      case 'CheckSquare': return <CheckSquare className="w-4 h-4 text-[#00A3FF]" />;
       case 'RefreshCw': return <RefreshCw className="w-4 h-4 text-[#8B5CF6]" />;
-      case 'FileBarChart': return <FileBarChart className="w-4 h-4 text-[#34D399]" />;
-      default: return <Sparkles className="w-4 h-4 text-[#3B82F6]" />;
+      case 'FileBarChart': return <FileBarChart className="w-4 h-4 text-[#10B981]" />;
+      default: return <Sparkles className="w-4 h-4 text-[#00D2FF]" />;
     }
   };
 
   return (
-    <section id="ai-solutions" className="py-20 md:py-28 bg-[#0A1024] relative border-t border-[#263653]/60">
+    <section id="ai-solutions" className="py-20 md:py-28 bg-[#000000] relative border-t border-[#1A253C]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-14 text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#101A33] border border-[#263653] text-[11px] font-semibold tracking-wider uppercase text-[#8B5CF6] mb-3">
-            PRACTICAL INTELLIGENCE
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B0F19] border border-[#1A253C] text-[11px] font-bold tracking-wider uppercase text-[#00D2FF] mb-3">
+            PRACTICAL AUTOMATION & AI
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F8FAFC] tracking-tight leading-tight mb-4">
-            What If Your Business Had an{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#22D3EE]">
-              AI Teammate?
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
+            Smart Automations for{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A3FF] via-[#00D2FF] to-white">
+              Everyday Operations.
             </span>
           </h2>
           <p className="text-base sm:text-lg text-[#CBD5E1] leading-relaxed">
-            Explore practical AI-powered solutions designed to assist with repetitive work, business workflows, and customer experiences.
+            Eliminate repetitive tasks with AI chatbots, instant lead capture, and workflow automations built specifically for your business.
           </p>
         </div>
 
         {/* Big Interactive Feature Panel */}
-        <div className="rounded-3xl bg-gradient-to-b from-[#101A33] to-[#0A1024] border border-[#263653] p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl bg-gradient-to-b from-[#0B0F19] to-[#000000] border border-[#1A253C] p-6 sm:p-10 shadow-2xl relative overflow-hidden">
           {/* Subtle Ambient Glow */}
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#8B5CF6]/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0052FE]/15 rounded-full blur-[140px] pointer-events-none" />
 
           {/* Conceptual Simulation Notice */}
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#050816]/80 border border-[#263653] text-xs text-[#94A3B8] mb-8 w-fit">
-            <Info className="w-4 h-4 text-[#22D3EE] shrink-0" />
-            <span>Interactive conceptual workflow demonstration. Real deployments are custom tailored to your tools.</span>
+          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#000000] border border-[#1A253C] text-xs text-[#94A3B8] mb-8 w-fit">
+            <Info className="w-4 h-4 text-[#00D2FF] shrink-0" />
+            <span>Interactive conceptual workflow demonstration. Real deployments connect directly to your CRM, WhatsApp & email.</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -106,8 +106,8 @@ export const AISolutionsSection: React.FC<AISolutionsSectionProps> = ({ onStartJ
                     }}
                     className={`w-full text-left p-4 rounded-xl border transition-all duration-200 cursor-pointer flex items-start justify-between gap-3 ${
                       isSelected
-                        ? 'bg-[#162342] border-[#8B5CF6] shadow-lg shadow-[#8B5CF6]/15'
-                        : 'bg-[#050816]/70 border-[#263653] hover:border-[#3B82F6]/40 hover:bg-[#101A33]'
+                        ? 'bg-[#111827] border-[#00D2FF] shadow-lg shadow-[#00A3FF]/15'
+                        : 'bg-[#000000] border-[#1A253C] hover:border-[#00D2FF]/40 hover:bg-[#0B0F19]'
                     }`}
                   >
                     <div>
@@ -119,7 +119,7 @@ export const AISolutionsSection: React.FC<AISolutionsSectionProps> = ({ onStartJ
                       </p>
                     </div>
                     {isSelected && (
-                      <span className="text-xs px-2 py-0.5 rounded-md bg-[#8B5CF6]/20 text-[#8B5CF6] font-mono shrink-0">
+                      <span className="text-xs px-2 py-0.5 rounded-md bg-[#00D2FF]/20 text-[#00D2FF] font-mono shrink-0">
                         ACTIVE
                       </span>
                     )}
@@ -128,7 +128,7 @@ export const AISolutionsSection: React.FC<AISolutionsSectionProps> = ({ onStartJ
               })}
 
               {/* Bottom impact callout */}
-              <div className="p-4 rounded-xl bg-[#050816] border border-[#263653] mt-6">
+              <div className="p-4 rounded-xl bg-[#000000] border border-[#1A253C] mt-6">
                 <div className="text-xs text-[#94A3B8] font-mono mb-1">Impact Goal</div>
                 <div className="text-xs text-[#CBD5E1] leading-relaxed">
                   {currentWorkflow.businessImpact}
@@ -137,19 +137,19 @@ export const AISolutionsSection: React.FC<AISolutionsSectionProps> = ({ onStartJ
             </div>
 
             {/* Right Column: Workflow Interactive Visual Pipeline */}
-            <div className="lg:col-span-7 bg-[#050816] rounded-2xl border border-[#263653] p-6 flex flex-col justify-between">
+            <div className="lg:col-span-7 bg-[#000000] rounded-2xl border border-[#1A253C] p-6 flex flex-col justify-between">
               <div>
                 {/* Workflow Title Header */}
-                <div className="flex flex-wrap items-center justify-between pb-4 border-b border-[#263653] gap-2 mb-6">
+                <div className="flex flex-wrap items-center justify-between pb-4 border-b border-[#1A253C] gap-2 mb-6">
                   <div>
-                    <h3 className="text-lg font-bold text-[#F8FAFC]">
+                    <h3 className="text-lg font-bold text-white">
                       {currentWorkflow.title}
                     </h3>
                     <span className="text-xs text-[#94A3B8]">
                       End-to-End Orchestration Architecture
                     </span>
                   </div>
-                  <span className="text-xs font-mono text-[#22D3EE] bg-[#101A33] px-3 py-1 rounded-full border border-[#263653]">
+                  <span className="text-xs font-mono text-[#00D2FF] bg-[#0B0F19] px-3 py-1 rounded-full border border-[#1A253C]">
                     {currentWorkflow.steps.length} Steps
                   </span>
                 </div>
@@ -164,13 +164,13 @@ export const AISolutionsSection: React.FC<AISolutionsSectionProps> = ({ onStartJ
                         onClick={() => setActiveStepIndex(sIdx)}
                         className={`p-3.5 rounded-xl border transition-all cursor-pointer ${
                           isActive
-                            ? 'bg-[#162342] border-[#22D3EE]'
-                            : 'bg-[#0A1024] border-[#263653] hover:border-[#3B82F6]/40'
+                            ? 'bg-[#111827] border-[#00D2FF]'
+                            : 'bg-[#0B0F19] border-[#1A253C] hover:border-[#00D2FF]/40'
                         }`}
                       >
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex items-center gap-2">
-                            <span className="w-5 h-5 rounded-full bg-[#101A33] border border-[#263653] text-[10px] font-mono flex items-center justify-center text-[#94A3B8]">
+                            <span className="w-5 h-5 rounded-full bg-[#000000] border border-[#1A253C] text-[10px] font-mono flex items-center justify-center text-[#94A3B8]">
                               {step.stage}
                             </span>
                             {getStepIcon(step.icon)}
@@ -183,7 +183,7 @@ export const AISolutionsSection: React.FC<AISolutionsSectionProps> = ({ onStartJ
                           )}
                         </div>
 
-                        <div className="text-xs font-bold text-[#F8FAFC] mb-1">
+                        <div className="text-xs font-bold text-white mb-1">
                           {step.name}
                         </div>
                         <p className="text-[11px] text-[#CBD5E1] leading-relaxed">
@@ -195,13 +195,13 @@ export const AISolutionsSection: React.FC<AISolutionsSectionProps> = ({ onStartJ
                 </div>
 
                 {/* Human Review & Safety Consideration */}
-                <div className="p-3.5 rounded-xl bg-[#101A33]/70 border border-[#263653] mb-6 flex items-start gap-3">
+                <div className="p-3.5 rounded-xl bg-[#0B0F19] border border-[#1A253C] mb-6 flex items-start gap-3">
                   <div className="w-7 h-7 rounded-lg bg-amber-400/10 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="text-xs font-bold text-amber-300 mb-0.5">
-                      Responsible Human Review Safeguard
+                      Reliable Oversight Safeguard
                     </div>
                     <div className="text-xs text-[#CBD5E1] leading-relaxed">
                       {currentWorkflow.reviewConsideration}
@@ -218,7 +218,7 @@ export const AISolutionsSection: React.FC<AISolutionsSectionProps> = ({ onStartJ
                     {currentWorkflow.integrations.map((tool) => (
                       <span
                         key={tool}
-                        className="text-xs px-2.5 py-1 rounded-lg bg-[#0A1024] border border-[#263653] text-[#CBD5E1]"
+                        className="text-xs px-2.5 py-1 rounded-lg bg-[#0B0F19] border border-[#1A253C] text-[#CBD5E1]"
                       >
                         {tool}
                       </span>
@@ -228,14 +228,14 @@ export const AISolutionsSection: React.FC<AISolutionsSectionProps> = ({ onStartJ
               </div>
 
               {/* Action Button */}
-              <div className="pt-6 mt-6 border-t border-[#263653] flex items-center justify-between">
+              <div className="pt-6 mt-6 border-t border-[#1A253C] flex items-center justify-between">
                 <span className="text-xs text-[#94A3B8]">
                   Customizable triggers and webhooks
                 </span>
                 <button
                   id="ai-discuss-cta"
                   onClick={onStartJourney}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] hover:opacity-90 shadow-md shadow-[#8B5CF6]/20 transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#0052FE] via-[#00A3FF] to-[#00D2FF] hover:brightness-110 shadow-md shadow-[#00A3FF]/20 transition-all cursor-pointer"
                 >
                   <span>Explore AI Solutions</span>
                   <ArrowRight className="w-3.5 h-3.5" />
