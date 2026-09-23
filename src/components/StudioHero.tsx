@@ -28,45 +28,45 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
   const slides = [
     {
       id: 'web',
-      tag: '( 網頁互動開發 · Web Engineering )',
+      tag: '( WEB ENGINEERING · DEV )',
       title: 'High-Converting Websites',
       price: '₹2,999',
       priceLabel: 'Starting from ₹2,999',
       serviceName: 'Website Development (from ₹2,999)',
-      image: '/src/assets/images/studio_laptop_mockup_1790189026060.jpg',
+      image: '/images/studio_laptop_mockup_1790189026060.jpg',
       category: 'WEBSITE BUILDING',
       desc: 'Sub-second speed, custom design, mobile responsiveness, and WhatsApp lead capture.',
     },
     {
       id: 'app',
-      tag: '( 跨平台行動應用 · App Development )',
+      tag: '( MOBILE APPS · IOS & ANDROID )',
       title: 'Mobile App Engineering',
       price: '₹9,999',
       priceLabel: 'Starting from ₹9,999',
       serviceName: 'Mobile App Development (from ₹9,999)',
-      image: '/src/assets/images/studio_smartphone_mockup_1790189013945.jpg',
+      image: '/images/studio_smartphone_mockup_1790189013945.jpg',
       category: 'MOBILE APP DEV',
       desc: 'Cross-platform iOS and Android apps with modern UI/UX, database, and push alerts.',
     },
     {
       id: 'gbp',
-      tag: '( 在地商家搜尋優化 · Local Map Pack )',
+      tag: '( LOCAL SEO · GOOGLE MAPS )',
       title: 'Google Business Profile',
       price: '₹999',
       priceLabel: 'Full Setup for ₹999',
       serviceName: 'Google Business Profile (₹999)',
-      image: '/src/assets/images/studio_magazine_editorial_1790189038500.jpg',
+      image: '/images/studio_magazine_editorial_1790189038500.jpg',
       category: 'GOOGLE MAPS SEO',
       desc: 'Complete GBP audit, NAP consistency, local map pack ranking, and review toolkit.',
     },
     {
       id: 'ai',
-      tag: '( AI 智慧流程自動化 · AI Systems )',
+      tag: '( AI AUTOMATION · WORKFLOWS )',
       title: 'AI Automation & Workflows',
       price: 'Custom',
       priceLabel: 'Growth Engine',
       serviceName: 'AI Automation & Custom Tools',
-      image: '/src/assets/images/hero_studio_stone_flow_1790189001110.jpg',
+      image: '/images/hero_studio_stone_flow_1790189001110.jpg',
       category: 'AI AUTOMATIONS',
       desc: 'Instant WhatsApp lead qualifiers, customer support bots, and automated task sync.',
     },
@@ -87,7 +87,7 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
       {/* 3D Dark Stone Backdrop */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <img
-          src="/src/assets/images/hero_studio_stone_flow_1790189001110.jpg"
+          src="/images/hero_studio_stone_flow_1790189001110.jpg"
           alt="Studio Background"
           className="w-full h-full object-cover opacity-35 filter contrast-125 brightness-75 scale-105 transition-transform duration-1000 ease-out"
         />
@@ -115,10 +115,10 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-start justify-between text-[11px] sm:text-xs text-[#94A3B8] font-mono tracking-wider pt-2">
         {/* Left Metadata */}
         <div className="hidden md:flex flex-col gap-1 text-left">
-          <span className="text-white/80 font-bold">( 核心策略規劃 · Strategy )</span>
-          <span>( 品牌識別 · Brand Identity )</span>
-          <span>( 內容創意 · Creative Content )</span>
-          <span>( 商業增長 · Business Sales )</span>
+          <span className="text-white/80 font-bold">( CORE ARCHITECTURE · STRATEGY )</span>
+          <span>( BRAND IDENTITY · DESIGN )</span>
+          <span>( CREATIVE CONTENT · GROWTH )</span>
+          <span>( BUSINESS SCALING · ROI )</span>
         </div>
 
         {/* Center Tagline / Pill */}

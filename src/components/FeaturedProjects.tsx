@@ -18,100 +18,102 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
     switch (project.mockupType) {
       case 'browser':
         return (
-          <div className="w-full h-48 bg-[#000000] rounded-xl border border-[#1A253C] p-3 flex flex-col justify-between overflow-hidden relative group-hover:border-[#00D2FF]/50 transition-colors">
-            <div className="flex items-center gap-1.5 pb-2 border-b border-[#1A253C]">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-              <span className="ml-2 text-[10px] text-[#94A3B8] font-mono">https://modernstore.bytex.dev</span>
+          <div className="w-full h-48 bg-[#000000] rounded-2xl border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden relative group-hover:border-white/30 transition-all font-mono">
+            <div className="flex items-center justify-between pb-2 border-b border-white/10">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-white/30" />
+                <span className="w-2 h-2 rounded-full bg-white/30" />
+                <span className="w-2 h-2 rounded-full bg-white/30" />
+              </div>
+              <span className="text-[10px] text-white/50">bytex.studio/works/{project.id}</span>
             </div>
-            <div className="space-y-2 py-2">
-              <div className="h-6 w-3/4 bg-[#0B0F19] rounded-md animate-pulse" />
-              <div className="grid grid-cols-3 gap-2 pt-1">
-                <div className="h-16 bg-[#111827] rounded-lg p-2 flex flex-col justify-between">
-                  <div className="w-6 h-6 rounded bg-[#0052FE]/30" />
-                  <div className="h-2 w-10 bg-[#CBD5E1]/40 rounded" />
+            <div className="space-y-2 py-3">
+              <div className="h-6 w-2/3 bg-white/10 rounded-md" />
+              <div className="grid grid-cols-3 gap-2">
+                <div className="h-16 bg-white/5 rounded-xl border border-white/10 p-2 flex flex-col justify-between">
+                  <div className="w-5 h-5 rounded bg-[#00D2FF]/20" />
+                  <div className="h-1.5 w-8 bg-white/20 rounded" />
                 </div>
-                <div className="h-16 bg-[#111827] rounded-lg p-2 flex flex-col justify-between">
-                  <div className="w-6 h-6 rounded bg-[#00D2FF]/30" />
-                  <div className="h-2 w-12 bg-[#CBD5E1]/40 rounded" />
+                <div className="h-16 bg-white/5 rounded-xl border border-white/10 p-2 flex flex-col justify-between">
+                  <div className="w-5 h-5 rounded bg-white/20" />
+                  <div className="h-1.5 w-10 bg-white/20 rounded" />
                 </div>
-                <div className="h-16 bg-[#111827] rounded-lg p-2 flex flex-col justify-between">
-                  <div className="w-6 h-6 rounded bg-[#00A3FF]/30" />
-                  <div className="h-2 w-8 bg-[#CBD5E1]/40 rounded" />
+                <div className="h-16 bg-white/5 rounded-xl border border-white/10 p-2 flex flex-col justify-between">
+                  <div className="w-5 h-5 rounded bg-[#10B981]/20" />
+                  <div className="h-1.5 w-7 bg-white/20 rounded" />
                 </div>
               </div>
             </div>
-            <div className="pt-2 border-t border-[#1A253C] flex justify-between text-[10px] text-[#10B981]">
-              <span>Core Web Vitals: 99</span>
-              <span>Checkout UX Ready</span>
+            <div className="pt-2 border-t border-white/10 flex justify-between text-[10px] text-[#00D2FF]">
+              <span>Speed: 99/100</span>
+              <span className="text-white/60">₹2,999 Build Standard</span>
             </div>
           </div>
         );
       case 'mobile':
         return (
-          <div className="w-full h-48 bg-[#000000] rounded-xl border border-[#1A253C] p-3 flex flex-col justify-between items-center overflow-hidden relative group-hover:border-[#00D2FF]/50 transition-colors">
-            <div className="w-40 h-full bg-[#0B0F19] rounded-t-xl border-t border-x border-[#1A253C] p-2 flex flex-col justify-between">
-              <div className="w-12 h-1.5 bg-[#1A253C] rounded-full mx-auto mb-2" />
+          <div className="w-full h-48 bg-[#000000] rounded-2xl border border-white/10 p-3.5 flex flex-col justify-between items-center overflow-hidden relative group-hover:border-white/30 transition-all font-mono">
+            <div className="w-44 h-full bg-[#070709] rounded-t-2xl border-t border-x border-white/15 p-2.5 flex flex-col justify-between shadow-inner">
+              <div className="w-10 h-1 bg-white/20 rounded-full mx-auto mb-2" />
               <div className="space-y-1.5 flex-1">
-                <div className="p-1.5 rounded bg-[#000000] border border-[#1A253C] text-[9px] text-[#CBD5E1]">
-                  Sprint Planning (Done)
+                <div className="p-1.5 rounded-lg bg-black border border-white/10 text-[9px] text-[#CBD5E1]">
+                  • Real-time Appointments (Active)
                 </div>
-                <div className="p-1.5 rounded bg-[#111827] border border-[#00D2FF]/40 text-[9px] text-[#00D2FF]">
-                  Mobile UI Review (Active)
+                <div className="p-1.5 rounded-lg bg-white/10 border border-white/20 text-[9px] text-white">
+                  • Push Notification Dispatch (Sent)
                 </div>
-                <div className="p-1.5 rounded bg-[#000000] border border-[#1A253C] text-[9px] text-[#94A3B8]">
-                  Release Tag 1.0 (Ready)
+                <div className="p-1.5 rounded-lg bg-black border border-white/10 text-[9px] text-white/50">
+                  • Offline Cache Ready
                 </div>
               </div>
-              <div className="h-1 w-16 bg-[#1A253C] rounded-full mx-auto mt-1" />
+              <div className="h-1 w-14 bg-white/20 rounded-full mx-auto mt-1" />
             </div>
           </div>
         );
       case 'workflow':
         return (
-          <div className="w-full h-48 bg-[#000000] rounded-xl border border-[#1A253C] p-3 flex flex-col justify-between overflow-hidden relative group-hover:border-[#00D2FF]/50 transition-colors font-mono">
-            <div className="flex justify-between items-center text-[10px] text-[#94A3B8] pb-1 border-b border-[#1A253C]">
-              <span className="text-[#00D2FF]">AI Qualification Node</span>
-              <span className="text-emerald-400 text-[9px]">Verified</span>
+          <div className="w-full h-48 bg-[#000000] rounded-2xl border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden relative group-hover:border-white/30 transition-all font-mono">
+            <div className="flex justify-between items-center text-[10px] text-white/60 pb-1.5 border-b border-white/10">
+              <span className="text-[#00D2FF]">WhatsApp Automation Node</span>
+              <span className="text-[#10B981] text-[9px]">Status: Active</span>
             </div>
-            <div className="flex items-center justify-center gap-2 py-2">
-              <div className="px-2 py-1.5 rounded bg-[#0B0F19] border border-[#1A253C] text-[10px] text-[#CBD5E1] text-center">
-                Webhook
+            <div className="flex items-center justify-center gap-2 py-3">
+              <div className="px-2.5 py-1.5 rounded-lg bg-[#070709] border border-white/10 text-[10px] text-white text-center">
+                User Chat
               </div>
               <span className="text-[#00D2FF] text-xs">→</span>
-              <div className="px-2 py-1.5 rounded bg-[#111827] border border-[#00D2FF]/60 text-[10px] text-[#00D2FF] text-center">
-                LLM Parse
+              <div className="px-2.5 py-1.5 rounded-lg bg-white/10 border border-white/20 text-[10px] text-white text-center">
+                Lead Qualify
               </div>
               <span className="text-[#00D2FF] text-xs">→</span>
-              <div className="px-2 py-1.5 rounded bg-[#0B0F19] border border-[#10B981]/60 text-[10px] text-[#10B981] text-center">
-                WhatsApp Alert
+              <div className="px-2.5 py-1.5 rounded-lg bg-[#070709] border border-[#10B981]/50 text-[10px] text-[#10B981] text-center">
+                Owner Alert
               </div>
             </div>
-            <div className="text-[10px] text-[#94A3B8] bg-[#0B0F19] p-2 rounded border border-[#1A253C]">
-              Output: Customer intent captured • 0 manual lag
+            <div className="text-[10px] text-white/70 bg-[#070709] p-2 rounded-xl border border-white/10">
+              Output: Instant Response • Zero manual response delay
             </div>
           </div>
         );
       case 'campaign':
         return (
-          <div className="w-full h-48 bg-[#000000] rounded-xl border border-[#1A253C] p-3 flex flex-col justify-between overflow-hidden relative group-hover:border-[#10B981]/50 transition-colors">
-            <div className="flex items-center justify-between text-[10px] text-[#94A3B8] pb-1 border-b border-[#1A253C]">
-              <span>Brand Kit & Local SEO</span>
-              <span className="text-[#10B981]">100% Verified</span>
+          <div className="w-full h-48 bg-[#000000] rounded-2xl border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden relative group-hover:border-white/30 transition-all font-mono">
+            <div className="flex items-center justify-between text-[10px] text-white/60 pb-1.5 border-b border-white/10">
+              <span>Local Map Pack & Branding</span>
+              <span className="text-[#10B981]">Verified #1</span>
             </div>
             <div className="grid grid-cols-2 gap-2 py-2">
-              <div className="bg-[#0B0F19] rounded-lg p-2 border border-[#1A253C]">
-                <div className="text-[9px] text-[#94A3B8]">Google Profile</div>
-                <div className="text-xs font-bold text-white">#1 Local Map Pack</div>
+              <div className="bg-[#070709] rounded-xl p-2.5 border border-white/10">
+                <div className="text-[9px] text-[#94A3B8]">Google Profile ₹999</div>
+                <div className="text-xs font-bold text-white">#1 Local 3-Pack</div>
               </div>
-              <div className="bg-[#0B0F19] rounded-lg p-2 border border-[#1A253C]">
-                <div className="text-[9px] text-[#94A3B8]">Visual Brand Kit</div>
-                <div className="text-xs font-bold text-white">Instagram Reels</div>
+              <div className="bg-[#070709] rounded-xl p-2.5 border border-white/10">
+                <div className="text-[9px] text-[#94A3B8]">Instagram Grid</div>
+                <div className="text-xs font-bold text-white">Curated Content</div>
               </div>
             </div>
-            <div className="text-[10px] text-[#CBD5E1] bg-[#000000] p-1.5 rounded border border-[#1A253C]">
-              Consistent visual identity across all online channels
+            <div className="text-[10px] text-white/60 bg-black p-1.5 rounded-lg border border-white/10">
+              Continuous customer flow across local search and social feeds
             </div>
           </div>
         );
@@ -119,38 +121,38 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
   };
 
   return (
-    <section id="work" className="py-20 md:py-28 bg-[#000000] relative border-t border-[#1A253C]">
+    <section id="work" className="py-20 md:py-28 bg-[#000000] relative border-b border-white/10 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B0F19] border border-[#1A253C] text-[11px] font-bold tracking-wider uppercase text-[#00D2FF] mb-3">
-              OUR PROVEN WORK
+            <div className="text-xs font-mono tracking-widest text-[#00D2FF] uppercase mb-3">
+              ( CASE ARCHIVE · DEPLOYED SYSTEMS )
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
-              Real Projects.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A3FF] via-[#00D2FF] to-white">
-                Tangible Results.
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase font-editorial mb-4">
+              PROVEN BUILDS.{' '}
+              <span className="text-white/40">
+                TANGIBLE IMPACT.
               </span>
             </h2>
-            <p className="text-base text-[#CBD5E1] leading-relaxed">
-              Explore how we apply modern engineering, sleek UI design, and strategic marketing to deliver true business growth.
+            <p className="text-xs sm:text-sm font-mono text-[#CBD5E1] leading-relaxed">
+              Explore how we deliver engineered speed, aesthetic precision, and measurable business growth for clients across India.
             </p>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap gap-1.5 bg-[#0B0F19] p-1 rounded-xl border border-[#1A253C] self-start md:self-auto">
+          {/* Filter Pills in Studio Capsule Style */}
+          <div className="flex flex-wrap gap-2 bg-[#070709] p-1.5 rounded-full border border-white/10 self-start md:self-auto">
             {(['All', 'Websites', 'Apps', 'AI', 'Marketing'] as const).map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-bold transition-all cursor-pointer ${
                   activeFilter === filter
-                    ? 'bg-[#111827] text-white border border-[#00D2FF]/50 shadow-xs'
-                    : 'text-[#94A3B8] hover:text-white'
+                    ? 'bg-white text-black shadow-md'
+                    : 'text-[#94A3B8] hover:text-white hover:bg-white/5'
                 }`}
               >
-                {filter}
+                {filter === 'All' ? 'All (04)' : filter}
               </button>
             ))}
           </div>
@@ -158,11 +160,11 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, idx) => (
             <div
               key={project.id}
               id={`project-card-${project.id}`}
-              className="group rounded-3xl bg-[#0B0F19] border border-[#1A253C] hover:border-[#00D2FF]/50 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between shadow-xl shadow-black/30"
+              className="group rounded-3xl bg-[#070709] border border-white/10 hover:border-white/30 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative backdrop-blur-xl"
             >
               <div>
                 {/* Mockup Preview */}
@@ -170,38 +172,32 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
                   {getMockupVisual(project)}
                 </div>
 
-                {/* Badges & Category */}
+                {/* Badges & Category Header */}
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-xs font-bold text-[#00D2FF] bg-[#000000] px-3 py-1 rounded-full border border-[#1A253C]">
-                    {project.categoryLabel}
+                  <span className="text-xs font-mono font-bold text-[#00D2FF]">
+                    0{idx + 1}. ( {project.categoryLabel.toUpperCase()} )
                   </span>
                   {project.badgeText && (
-                    <span
-                      className={`text-[10px] font-mono px-2 py-0.5 rounded-full border ${
-                        project.isConceptualDemo
-                          ? 'bg-amber-500/10 text-amber-300 border-amber-500/30'
-                          : 'bg-[#10B981]/15 text-[#10B981] border-[#10B981]/30'
-                      }`}
-                    >
+                    <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/10 border border-white/15 text-white">
                       {project.badgeText}
                     </span>
                   )}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00D2FF] transition-colors">
+                <h3 className="text-2xl font-black text-white font-editorial tracking-tight mb-2 group-hover:text-[#00D2FF] transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-sm text-[#CBD5E1] leading-relaxed mb-5 font-normal">
+                <p className="text-xs font-mono text-[#CBD5E1] leading-relaxed mb-6">
                   {project.description}
                 </p>
 
                 {/* Key Highlights */}
-                <div className="space-y-1.5 mb-6">
+                <div className="space-y-2 mb-6">
                   {project.highlights.map((highlight, hIdx) => (
-                    <div key={hIdx} className="flex items-center gap-2 text-xs text-[#CBD5E1]">
-                      <CheckCircle className="w-3.5 h-3.5 text-[#00D2FF] shrink-0" />
+                    <div key={hIdx} className="flex items-center gap-2.5 text-xs text-[#CBD5E1]">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#00D2FF] shrink-0" />
                       <span>{highlight}</span>
                     </div>
                   ))}
@@ -209,12 +205,12 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
               </div>
 
               {/* Tech stack & Action button */}
-              <div className="pt-4 border-t border-[#1A253C] flex flex-wrap items-center justify-between gap-4">
+              <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex flex-wrap gap-1.5">
                   {project.technologies.slice(0, 3).map((tech) => (
                     <span
                       key={tech}
-                      className="text-[11px] font-mono text-[#94A3B8] bg-[#000000] px-2 py-0.5 rounded border border-[#1A253C]"
+                      className="text-[10px] font-mono text-[#94A3B8] bg-black px-2 py-0.5 rounded border border-white/10"
                     >
                       {tech}
                     </span>
@@ -224,10 +220,10 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
                 <button
                   id={`view-study-${project.id}`}
                   onClick={() => onSelectProject(project)}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#00D2FF] group-hover:text-white transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-black bg-white hover:bg-[#00D2FF] hover:text-black px-3.5 py-2 rounded-xl transition-all cursor-pointer shadow-md"
                 >
-                  <span>View Case Study</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <span>Case Study</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>

@@ -22,111 +22,108 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Code':
-        return <Code className="w-5 h-5 text-[#00D2FF]" />;
+        return <Code className="w-5 h-5 text-white" />;
       case 'Smartphone':
-        return <Smartphone className="w-5 h-5 text-[#00A3FF]" />;
+        return <Smartphone className="w-5 h-5 text-white" />;
       case 'Sparkles':
-        return <Sparkles className="w-5 h-5 text-[#8B5CF6]" />;
+        return <Sparkles className="w-5 h-5 text-white" />;
       case 'TrendingUp':
-        return <TrendingUp className="w-5 h-5 text-[#10B981]" />;
+        return <TrendingUp className="w-5 h-5 text-white" />;
       case 'MapPin':
-        return <MapPin className="w-5 h-5 text-[#10B981]" />;
+        return <MapPin className="w-5 h-5 text-white" />;
       case 'Palette':
-        return <Palette className="w-5 h-5 text-[#EC4899]" />;
+        return <Palette className="w-5 h-5 text-white" />;
       default:
-        return <Code className="w-5 h-5 text-[#00D2FF]" />;
+        return <Code className="w-5 h-5 text-white" />;
     }
   };
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-[#000000] relative border-t border-[#1A253C]">
-      {/* Subtle Cyan Glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#0052FE]/10 rounded-full blur-[140px] pointer-events-none" />
+    <section id="services" className="py-20 md:py-28 bg-[#000000] relative border-t border-white/10 select-none">
+      {/* Background radial atmosphere */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#0052FE]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-14 text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B0F19] border border-[#1A253C] text-[11px] font-bold tracking-wider uppercase text-[#00D2FF] mb-3">
-            CLEAR PRICING • HIGH PERFORMANCE
+        {/* Editorial Section Header */}
+        <div className="max-w-3xl mb-16 text-left">
+          <div className="text-xs font-mono tracking-widest text-[#00D2FF] uppercase mb-3">
+            ( TECHNICAL CAPABILITIES · CORE SERVICES )
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
-            Everything You Need to{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A3FF] via-[#00D2FF] to-white">
-              Build, Market & Grow.
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase font-editorial mb-4">
+            PRECISION CRAFT.{' '}
+            <span className="text-white/40">
+              UNCOMPROMISED VALUE.
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-[#CBD5E1] leading-relaxed">
-            Professional digital solutions with completely upfront, student-friendly pricing. Websites from ₹2,999, mobile apps from ₹9,999, and Google Business Profile setup for just ₹999.
+          <p className="text-xs sm:text-sm font-mono text-[#CBD5E1] leading-relaxed max-w-2xl">
+            Custom engineered platforms built for maximum commercial performance. Websites from ₹2,999, mobile apps from ₹9,999, and local Google dominance for ₹999.
           </p>
         </div>
 
         {/* 6 Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES_DATA.map((service) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {SERVICES_DATA.map((service, index) => (
             <div
               key={service.id}
               id={`service-card-${service.id}`}
-              className="group p-6 sm:p-7 rounded-2xl bg-[#0B0F19] border border-[#1A253C] hover:border-[#00D2FF]/60 hover:bg-[#111827] transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between shadow-xl shadow-black/40 relative overflow-hidden"
+              className="rounded-3xl bg-[#070709] border border-white/10 p-7 flex flex-col justify-between hover:border-white/25 hover:bg-[#0A0A0E] transition-all duration-300 shadow-xl group backdrop-blur-xl"
             >
-              {/* Highlight bar for featured pricing */}
-              {service.price && (
-                <div className="absolute top-0 right-0 bg-gradient-to-l from-[#0052FE] to-[#00A3FF] text-white text-[11px] font-bold px-3 py-1 rounded-bl-xl font-mono shadow-sm">
-                  {service.price}
-                </div>
-              )}
-
-              {/* Top Row */}
               <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-[#000000] border border-[#1A253C] flex items-center justify-center group-hover:scale-105 group-hover:border-[#00D2FF]/50 transition-all">
+                {/* Category & Index Header */}
+                <div className="flex items-center justify-between text-xs font-mono text-[#94A3B8] mb-5">
+                  <span className="text-[#00D2FF]">0{index + 1}. {service.category.toUpperCase()}</span>
+                  {service.timeline && (
+                    <span className="text-white/40 flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {service.timeline}
+                    </span>
+                  )}
+                </div>
+
+                {/* Icon & Title */}
+                <div className="flex items-start gap-3.5 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                     {getIcon(service.iconName)}
                   </div>
-                  <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#000000] border border-[#1A253C] text-[#94A3B8]">
-                    {service.category}
-                  </span>
-                </div>
-
-                <div className="flex items-baseline gap-2 mb-1">
-                  <h3 className="text-xl font-bold text-white group-hover:text-[#00D2FF] transition-colors">
-                    {service.title}
-                  </h3>
-                </div>
-
-                {service.featuredPriceBadge && (
-                  <div className="inline-block text-xs font-semibold text-[#00D2FF] mb-3">
-                    {service.featuredPriceBadge}
+                  <div>
+                    <h3 className="text-xl font-black text-white font-editorial tracking-tight group-hover:text-[#00D2FF] transition-colors">
+                      {service.title}
+                    </h3>
+                    {service.featuredPriceBadge && (
+                      <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-white/10 text-white font-mono text-[10px] font-bold">
+                        {service.featuredPriceBadge}
+                      </span>
+                    )}
                   </div>
-                )}
+                </div>
 
-                <p className="text-sm text-[#CBD5E1] leading-relaxed mb-6 font-normal">
+                {/* Description */}
+                <p className="text-xs font-mono text-[#CBD5E1] leading-relaxed mb-6">
                   {service.description}
                 </p>
 
-                {/* Features List */}
-                <div className="space-y-2 mb-6">
-                  {service.features.slice(0, 4).map((feature, fIdx) => (
-                    <div key={fIdx} className="flex items-center gap-2 text-xs text-[#CBD5E1]">
-                      <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0" />
-                      <span>{feature}</span>
+                {/* Deliverables / Features */}
+                <div className="space-y-2 mb-6 pt-4 border-t border-white/10">
+                  <div className="text-[10px] font-mono text-white/50 uppercase tracking-wider">
+                    Core Specifications
+                  </div>
+                  {service.deliverables.slice(0, 3).map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 text-xs text-[#CBD5E1]">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#00D2FF] shrink-0" />
+                      <span className="line-clamp-1">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Bottom Action */}
-              <div className="pt-4 border-t border-[#1A253C] flex items-center justify-between mt-2">
-                <div className="flex items-center gap-1.5 text-xs text-[#94A3B8]">
-                  <Clock className="w-3.5 h-3.5 text-[#94A3B8]" />
-                  <span>{service.timeline.split(' ')[0]} {service.timeline.split(' ')[1]}</span>
-                </div>
-
+              {/* Action Button */}
+              <div className="pt-4 border-t border-white/10">
                 <button
-                  id={`btn-service-${service.id}`}
                   onClick={() => onSelectService(service)}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#00D2FF] group-hover:text-white transition-colors cursor-pointer"
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-bold text-white bg-white/5 hover:bg-white hover:text-black border border-white/15 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <span>Learn More</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <span>Explore Blueprint</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>

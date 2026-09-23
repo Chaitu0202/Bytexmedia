@@ -11,6 +11,7 @@ import { ProcessSection } from './components/ProcessSection';
 import { TrustSection } from './components/TrustSection';
 import { ContactSection, ContactSectionRef } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ServiceDetailModal, CaseStudyModal, LegalModal } from './components/Modals';
 import { ServiceItem, ProjectItem, PackageItem } from './types';
 import {
@@ -102,35 +103,35 @@ export default function App() {
       <main className="flex-1 pt-16">
         {/* Sub-navigation bar when viewing dedicated pages (less to scroll, fast switching) */}
         {activeTab !== 'home' && (
-          <div className="bg-[#0B0F19] border-b border-[#1A253C] sticky top-16 z-40 backdrop-blur-md">
+          <div className="bg-[#070709]/90 border-b border-white/10 sticky top-16 z-40 backdrop-blur-xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2 text-xs sm:text-sm">
+              <div className="flex items-center gap-2 text-xs font-mono">
                 <button
                   onClick={() => handleTabChange('home')}
                   className="flex items-center gap-1 text-[#94A3B8] hover:text-white transition-colors cursor-pointer"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
-                  <span>Home</span>
+                  <span>Index</span>
                 </button>
-                <ChevronRight className="w-3 h-3 text-[#1A253C]" />
+                <ChevronRight className="w-3 h-3 text-white/30" />
                 <div className="flex items-center gap-1.5 text-white font-bold">
-                  <CurrentIcon className="w-4 h-4 text-[#00D2FF]" />
+                  <CurrentIcon className="w-3.5 h-3.5 text-[#00D2FF]" />
                   <span>{tabLabels[activeTab].title}</span>
                 </div>
               </div>
 
               {/* View Switcher Pills */}
-              <div className="flex items-center gap-1 overflow-x-auto py-1 max-w-full">
+              <div className="flex items-center gap-1.5 overflow-x-auto py-1 max-w-full">
                 {(['services', 'work', 'ai', 'about', 'contact'] as NavTab[]).map((tab) => {
                   const isActive = activeTab === tab;
                   return (
                     <button
                       key={tab}
                       onClick={() => handleTabChange(tab)}
-                      className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
+                      className={`px-3 py-1 rounded-full text-xs font-mono font-bold whitespace-nowrap transition-all cursor-pointer ${
                         isActive
-                          ? 'bg-[#111827] text-[#00D2FF] border border-[#00D2FF]/40'
-                          : 'text-[#94A3B8] hover:text-white hover:bg-[#000000]'
+                          ? 'bg-white text-black shadow-md'
+                          : 'text-[#94A3B8] hover:text-white hover:bg-white/5'
                       }`}
                     >
                       {tabLabels[tab].title.split(' ')[0]}
@@ -213,6 +214,9 @@ export default function App() {
         type={legalModalType}
         onClose={() => setLegalModalType(null)}
       />
+
+      {/* Floating WhatsApp Quick Action Button */}
+      <FloatingWhatsApp />
     </div>
   );
 }

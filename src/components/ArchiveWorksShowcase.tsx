@@ -35,7 +35,7 @@ export const ArchiveWorksShowcase: React.FC<ArchiveWorksShowcaseProps> = ({
         {/* Editorial Section Header (Screenshot 6 style) */}
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="text-xs font-mono tracking-widest text-[#00D2FF] uppercase mb-3">
-            ( 重新定義品牌的視覺思維 · CURATED SHOWCASE )
+            ( CURATED SHOWCASE · SELECTED WORKS )
           </div>
 
           <h2
@@ -137,8 +137,8 @@ export const ArchiveWorksShowcase: React.FC<ArchiveWorksShowcaseProps> = ({
               <img
                 src={
                   selectedIdx % 2 === 0
-                    ? '/src/assets/images/studio_laptop_mockup_1790189026060.jpg'
-                    : '/src/assets/images/studio_smartphone_mockup_1790189013945.jpg'
+                    ? '/images/studio_laptop_mockup_1790189026060.jpg'
+                    : '/images/studio_smartphone_mockup_1790189013945.jpg'
                 }
                 alt={current.title}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"

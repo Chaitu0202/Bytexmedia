@@ -62,6 +62,8 @@ export interface PackageItem {
   idealFor: string;
   pricingNote: string;
   price?: string;
+  billingNote?: string;
+  savingsNote?: string;
   features: string[];
   actionLabel: string;
 }

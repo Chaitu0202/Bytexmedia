@@ -5,36 +5,30 @@ import { BUSINESS_CHALLENGES } from '../data/content';
 export const BusinessChallenge: React.FC = () => {
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Compass':
-        return <Compass className="w-5 h-5 text-[#00D2FF]" />;
-      case 'Clock':
-        return <Clock className="w-5 h-5 text-[#8B5CF6]" />;
-      case 'MonitorX':
-        return <MonitorX className="w-5 h-5 text-[#00A3FF]" />;
-      case 'GitFork':
-        return <GitFork className="w-5 h-5 text-[#10B981]" />;
-      default:
-        return <ShieldAlert className="w-5 h-5 text-[#00D2FF]" />;
+      case 'Compass': return <Compass className="w-5 h-5 text-white" />;
+      case 'Clock': return <Clock className="w-5 h-5 text-white" />;
+      case 'MonitorX': return <MonitorX className="w-5 h-5 text-white" />;
+      case 'GitFork': return <GitFork className="w-5 h-5 text-white" />;
+      default: return <ShieldAlert className="w-5 h-5 text-white" />;
     }
   };
 
   return (
-    <section id="challenges" className="py-20 md:py-28 bg-[#000000] relative overflow-hidden border-t border-[#1A253C]">
+    <section id="challenges" className="py-20 md:py-28 bg-[#000000] relative overflow-hidden border-b border-white/10 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-14 text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B0F19] border border-[#1A253C] text-[11px] font-bold tracking-wider uppercase text-[#00D2FF] mb-3">
-            SOLVING REAL BUSINESS OBSTACLES
+        {/* Editorial Section Header */}
+        <div className="max-w-3xl mb-16 text-left">
+          <div className="text-xs font-mono tracking-widest text-[#00D2FF] uppercase mb-3">
+            ( PROBLEM ANALYSIS · COMMERCIAL BOTTLENECKS )
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
-            Your Business Has Potential.{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A3FF] via-[#00D2FF] to-white">
-              Let&apos;s Unlock It.
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase font-editorial mb-4">
+            UNLOCKING HIDDEN{' '}
+            <span className="text-white/40">
+              GROWTH CAPACITY.
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-[#CBD5E1] leading-relaxed">
-            From getting discovered online to automating everyday work, businesses need more than disconnected tools.
-            ByteX Media brings design, engineering, and digital growth solutions together under one roof.
+          <p className="text-xs sm:text-sm font-mono text-[#CBD5E1] leading-relaxed max-w-2xl">
+            From fragmented marketing to slow legacy sites. ByteX Studio dismantles technical bottlenecks with high-converting systems.
           </p>
         </div>
 
@@ -44,26 +38,31 @@ export const BusinessChallenge: React.FC = () => {
             <div
               key={challenge.id}
               id={`challenge-card-${challenge.id}`}
-              className="group p-6 rounded-2xl bg-[#0B0F19] border border-[#1A253C] hover:border-[#00D2FF]/50 hover:bg-[#111827] transition-all duration-300 flex flex-col justify-between shadow-lg shadow-black/40"
+              className="group p-6 rounded-3xl bg-[#070709] border border-white/10 hover:border-white/30 transition-all duration-300 flex flex-col justify-between shadow-2xl backdrop-blur-xl"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#000000] border border-[#1A253C] flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
                     {getIcon(challenge.icon)}
                   </div>
-                  <span className="text-xs font-mono text-[#94A3B8]">0{idx + 1}</span>
+                  <span className="text-xs font-mono text-[#00D2FF]">0{idx + 1}</span>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#00D2FF] transition-colors">
+                <h3 className="text-base font-bold text-white font-editorial mb-2 group-hover:text-[#00D2FF] transition-colors">
                   {challenge.title}
                 </h3>
-                <p className="text-sm text-[#CBD5E1] leading-relaxed mb-4">
+                <p className="text-xs font-mono text-[#94A3B8] leading-relaxed mb-4">
                   {challenge.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#1A253C] text-xs text-[#94A3B8] group-hover:text-[#CBD5E1] transition-colors flex items-start gap-1.5">
-                <span className="text-[#00D2FF] font-semibold shrink-0">How we help:</span>
-                <span>{challenge.solution}</span>
+              <div className="pt-3 border-t border-white/10">
+                <div className="text-[10px] font-mono text-white/50 uppercase tracking-wider mb-1">
+                  Engineered Fix
+                </div>
+                <div className="text-xs font-mono text-[#10B981] font-semibold flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5" />
+                  <span>{challenge.solution}</span>
+                </div>
               </div>
             </div>
           ))}
