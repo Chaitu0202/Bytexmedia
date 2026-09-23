@@ -16,6 +16,7 @@ import { StudioHero } from './StudioHero';
 import { DotMatrixMarquee } from './DotMatrixMarquee';
 import { SectorsShowcase } from './SectorsShowcase';
 import { ArchiveWorksShowcase } from './ArchiveWorksShowcase';
+import { VizagSEOSection } from './VizagSEOSection';
 import { NavTab } from './Navbar';
 import { ProjectItem } from '../types';
 
@@ -54,7 +55,13 @@ export const HomeOverview: React.FC<HomeOverviewProps> = ({
         onStartJourney={onStartJourney}
       />
 
-      {/* 5. Minimalist Studio Direct Consultation Strip */}
+      {/* 5. Dedicated Vizag SEO Hub: Websites Under ₹3,000 (Rank #1 in Google Searches) */}
+      <VizagSEOSection
+        onNavigate={onNavigate}
+        onStartJourney={onStartJourney}
+      />
+
+      {/* 6. Minimalist Studio Direct Consultation Strip */}
       <section className="py-20 bg-[#000000] border-t border-white/10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="p-8 sm:p-12 rounded-3xl bg-[#08080A] border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">

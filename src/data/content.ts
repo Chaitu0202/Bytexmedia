@@ -394,19 +394,19 @@ export const AI_WORKFLOWS: AIWorkflowItem[] = [
 export const PACKAGES_DATA: PackageItem[] = [
   {
     id: 'starter',
-    name: 'Website Development',
-    badge: 'Best Seller',
-    tagline: 'Get your business live online with a high-converting, lightning-fast website.',
-    idealFor: 'Small businesses, professionals, local shops & startups.',
+    name: 'Website Development (Under ₹3,000)',
+    badge: 'Under ₹3,000 in Vizag',
+    tagline: 'High-converting business websites under ₹3,000 in Vizag & pan-India starting at just ₹2,999.',
+    idealFor: 'Vizag local shops, clinics, cafes, professionals & startups.',
     price: '₹2,999',
-    pricingNote: 'One-time investment • No hidden recurring platform fees',
+    pricingNote: 'One-time investment • Under ₹3,000 guaranteed • Zero hidden fees',
     features: [
-      'Complete modern responsive business website',
+      'Complete modern responsive business website (1-3 pages)',
       'Mobile, tablet & desktop layout optimization',
       'WhatsApp direct inquiry click-to-chat integration',
-      'Ultra-fast load time (Core Web Vitals optimized)',
-      'Basic SEO & social sharing preview tags',
-      'Fast 3-5 day delivery & free deployment setup'
+      'Ultra-fast load time (Core Web Vitals 95+ score)',
+      'Localized Vizag Google Maps & SEO search tags',
+      'Fast 3-5 day delivery & 100% full code ownership'
     ],
     actionLabel: 'Get Web Dev for ₹2,999 →'
   },

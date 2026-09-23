@@ -2,13 +2,14 @@ import React from 'react';
 
 export const DotMatrixMarquee: React.FC = () => {
   const items = [
+    'WEBSITES UNDER 3000 IN VIZAG',
     'WEBSITE BUILDING ₹2,999',
     'APP ENGINEERING ₹9,999',
+    'VIZAG BEST WEB DESIGN',
     'GOOGLE PROFILE ₹999',
     'INSTAGRAM HANDLING',
-    'AI AUTOMATIONS',
-    'DIGITAL STRATEGY',
-    'HIGH PERFORMANCE',
+    'VISAKHAPATNAM #1 WEB STUDIO',
+    'SUB-SECOND SPEED 98+',
     '100% CODE OWNERSHIP',
   ];
 

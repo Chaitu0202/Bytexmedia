@@ -160,6 +160,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange, onOpenQu
 
             <div className="pt-3 border-t border-white/10 mt-2 flex flex-col gap-2">
               <a
+                href="#vizag-websites"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-mono font-bold text-[#00D2FF] bg-[#00D2FF]/10 border border-[#00D2FF]/30 hover:bg-[#00D2FF]/20 transition-colors"
+              >
+                <span>Websites Under ₹3,000 (Vizag)</span>
+                <span className="text-[10px] bg-[#00D2FF] text-black px-2 py-0.5 rounded-full font-black">₹2,999</span>
+              </a>
+
+              <a
                 href="https://wa.me/918185807402?text=Hello%20ByteX%20Media!%20I%20want%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
