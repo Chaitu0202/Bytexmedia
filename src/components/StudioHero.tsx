@@ -34,6 +34,7 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
       priceLabel: 'Starting from ₹2,999',
       serviceName: 'Website Development (from ₹2,999)',
       image: '/images/studio_laptop_mockup_1790189026060.jpg',
+      webp: '/images/studio_laptop_mockup_1790189026060.webp',
       category: 'WEBSITE BUILDING',
       desc: 'Sub-second speed, custom design, mobile responsiveness, and WhatsApp lead capture.',
     },
@@ -45,6 +46,7 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
       priceLabel: 'Starting from ₹9,999',
       serviceName: 'Mobile App Development (from ₹9,999)',
       image: '/images/studio_smartphone_mockup_1790189013945.jpg',
+      webp: '/images/studio_smartphone_mockup_1790189013945.webp',
       category: 'MOBILE APP DEV',
       desc: 'Cross-platform iOS and Android apps with modern UI/UX, database, and push alerts.',
     },
@@ -56,6 +58,7 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
       priceLabel: 'Full Setup for ₹999',
       serviceName: 'Google Business Profile (₹999)',
       image: '/images/studio_magazine_editorial_1790189038500.jpg',
+      webp: '/images/studio_magazine_editorial_1790189038500.webp',
       category: 'GOOGLE MAPS SEO',
       desc: 'Complete GBP audit, NAP consistency, local map pack ranking, and review toolkit.',
     },
@@ -67,10 +70,21 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
       priceLabel: 'Growth Engine',
       serviceName: 'AI Automation & Custom Tools',
       image: '/images/hero_studio_stone_flow_1790189001110.jpg',
+      webp: '/images/hero_studio_stone_flow_1790189001110.webp',
       category: 'AI AUTOMATIONS',
       desc: 'Instant WhatsApp lead qualifiers, customer support bots, and automated task sync.',
     },
   ];
+
+  // Instant image preloading on mount into memory cache
+  useEffect(() => {
+    slides.forEach((s) => {
+      const img = new Image();
+      img.src = s.webp;
+      const imgFallback = new Image();
+      imgFallback.src = s.image;
+    });
+  }, []);
 
   // Auto rotate slides gently
   useEffect(() => {
@@ -84,13 +98,19 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
 
   return (
     <section className="relative min-h-[100svh] bg-[#000000] text-white flex flex-col justify-between overflow-hidden pt-24 pb-8 select-none">
-      {/* 3D Dark Stone Backdrop */}
+      {/* 3D Dark Stone Backdrop with high-performance WebP */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <img
-          src="/images/hero_studio_stone_flow_1790189001110.jpg"
-          alt="Studio Background"
-          className="w-full h-full object-cover opacity-35 filter contrast-125 brightness-75 scale-105 transition-transform duration-1000 ease-out"
-        />
+        <picture>
+          <source srcSet="/images/hero_studio_stone_flow_1790189001110.webp" type="image/webp" />
+          <img
+            src="/images/hero_studio_stone_flow_1790189001110.jpg"
+            alt="Studio Background"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className="w-full h-full object-cover opacity-35 filter contrast-125 brightness-75 scale-105 transition-transform duration-1000 ease-out"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/80" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.85)_100%)]" />
       </div>
@@ -179,11 +199,16 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
 
             {/* Showcase Visual Slot with Chromatic Aberration frame */}
             <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-black border border-white/10 mb-4 group/image shadow-inner">
-              <img
-                src={active.image}
-                alt={active.title}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/image:scale-105"
-              />
+              <picture>
+                <source srcSet={active.webp} type="image/webp" />
+                <img
+                  src={active.image}
+                  alt={active.title}
+                  loading="eager"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/image:scale-105"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
               {/* Price Banner Overlay */}

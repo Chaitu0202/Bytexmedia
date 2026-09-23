@@ -29,6 +29,16 @@ export const ArchiveWorksShowcase: React.FC<ArchiveWorksShowcaseProps> = ({
   const projects = FEATURED_PROJECTS;
   const current = projects[selectedIdx];
 
+  // Preload both mockups in memory
+  React.useEffect(() => {
+    ['/images/studio_laptop_mockup_1790189026060.webp', '/images/studio_smartphone_mockup_1790189013945.webp'].forEach(
+      (src) => {
+        const img = new Image();
+        img.src = src;
+      }
+    );
+  }, []);
+
   return (
     <section className="py-24 md:py-32 bg-[#000000] relative border-t border-white/10 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -134,15 +144,27 @@ export const ArchiveWorksShowcase: React.FC<ArchiveWorksShowcaseProps> = ({
           {/* Right Column: Visual Showcase Device Mockup */}
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black border border-white/15 shadow-2xl group">
-              <img
-                src={
-                  selectedIdx % 2 === 0
-                    ? '/images/studio_laptop_mockup_1790189026060.jpg'
-                    : '/images/studio_smartphone_mockup_1790189013945.jpg'
-                }
-                alt={current.title}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
+              <picture>
+                <source
+                  srcSet={
+                    selectedIdx % 2 === 0
+                      ? '/images/studio_laptop_mockup_1790189026060.webp'
+                      : '/images/studio_smartphone_mockup_1790189013945.webp'
+                  }
+                  type="image/webp"
+                />
+                <img
+                  src={
+                    selectedIdx % 2 === 0
+                      ? '/images/studio_laptop_mockup_1790189026060.jpg'
+                      : '/images/studio_smartphone_mockup_1790189013945.jpg'
+                  }
+                  alt={current.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-white/90">

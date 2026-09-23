@@ -32,6 +32,7 @@ export const SectorsShowcase: React.FC<SectorsShowcaseProps> = ({
       badge: 'Starts ₹2,999',
       serviceName: 'Website Development (from ₹2,999)',
       image: '/images/studio_laptop_mockup_1790189026060.jpg',
+      webp: '/images/studio_laptop_mockup_1790189026060.webp',
       icon: Code,
       specs: ['Responsive Desktop & Mobile', 'Next-Gen Speed (98+ score)', 'WhatsApp Lead Chat Integration', '3-5 Days Turnaround'],
       stats: '4.8x Higher Conversion vs Legacy Sites',
@@ -44,6 +45,7 @@ export const SectorsShowcase: React.FC<SectorsShowcaseProps> = ({
       badge: 'Starts ₹9,999',
       serviceName: 'Mobile App Development (from ₹9,999)',
       image: '/images/studio_smartphone_mockup_1790189013945.jpg',
+      webp: '/images/studio_smartphone_mockup_1790189013945.webp',
       icon: Smartphone,
       specs: ['iOS & Android Cross-Platform', 'Fluid Native Gestures', 'Clean Backend Authentication', 'Store Readiness Protocol'],
       stats: 'Engineered for High Retention',
@@ -56,6 +58,7 @@ export const SectorsShowcase: React.FC<SectorsShowcaseProps> = ({
       badge: 'Complete Setup ₹999',
       serviceName: 'Google Business Profile (₹999)',
       image: '/images/studio_magazine_editorial_1790189038500.jpg',
+      webp: '/images/studio_magazine_editorial_1790189038500.webp',
       icon: MapPin,
       specs: ['Local Search Pack Audit', '100% NAP Consistency Fix', 'Keyword & Category Optimization', 'Review Generation Assets'],
       stats: 'Immediate Local Footfall Surge',
@@ -68,6 +71,7 @@ export const SectorsShowcase: React.FC<SectorsShowcaseProps> = ({
       badge: 'Monthly Plan',
       serviceName: 'Instagram Handling & Marketing',
       image: '/images/hero_studio_stone_flow_1790189001110.jpg',
+      webp: '/images/hero_studio_stone_flow_1790189001110.webp',
       icon: Instagram,
       specs: ['Curated Visual Grid Aesthetic', 'Engaging Reels & Motion Scripts', 'Direct Message Lead Funnels', 'Bi-Weekly Performance Metrics'],
       stats: 'Organic Follower to Buyer Pipeline',
@@ -80,6 +84,7 @@ export const SectorsShowcase: React.FC<SectorsShowcaseProps> = ({
       badge: 'Scale Engine',
       serviceName: 'AI Automation & Custom Tools',
       image: '/images/studio_smartphone_mockup_1790189013945.jpg',
+      webp: '/images/studio_smartphone_mockup_1790189013945.webp',
       icon: Sparkles,
       specs: ['WhatsApp Auto-Reply Qualifier', 'Customer Support Bot Integration', 'Automated CRM Lead Routing', 'Zero Manual Delay'],
       stats: '24/7 Instant Response Automation',
@@ -88,6 +93,14 @@ export const SectorsShowcase: React.FC<SectorsShowcaseProps> = ({
 
   const current = sectors[activeSector];
   const Icon = current.icon;
+
+  // Preload all sector visuals in memory
+  React.useEffect(() => {
+    sectors.forEach((s) => {
+      const img = new Image();
+      img.src = s.webp;
+    });
+  }, []);
 
   return (
     <section className="py-24 md:py-32 bg-[#000000] relative overflow-hidden border-t border-white/10 select-none">
@@ -198,11 +211,16 @@ export const SectorsShowcase: React.FC<SectorsShowcaseProps> = ({
           {/* Right: Floating Visual Slot */}
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black border border-white/15 shadow-2xl group">
-              <img
-                src={current.image}
-                alt={current.title}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
+              <picture>
+                <source srcSet={current.webp} type="image/webp" />
+                <img
+                  src={current.image}
+                  alt={current.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-white/90">
