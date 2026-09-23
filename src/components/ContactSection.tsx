@@ -150,7 +150,7 @@ Description: ${formData.description}`;
     `Hello ByteX Media Team,\n\nI would like to discuss a project:\n\nName: ${formData.fullName}\nBusiness: ${formData.businessName}\nEmail: ${formData.email}\nPhone: ${formData.phoneNumber}\nService: ${formData.service}\nPreferred Method: ${formData.preferredMethod}\n\nProject Requirements:\n${formData.description}\n\nThank you!`
   )}`;
 
-  const whatsAppLink = `https://wa.me/919390244788?text=${encodeURIComponent(
+  const whatsAppLink = `https://wa.me/918185807402?text=${encodeURIComponent(
     `Hello ByteX Media Team! My name is ${formData.fullName}. I am inquiring about ${formData.service}. My requirements: ${formData.description}`
   )}`;
 
@@ -196,7 +196,7 @@ Description: ${formData.description}`;
                 </a>
 
                 <a
-                  href="https://wa.me/919390244788?text=Hello%20ByteX%20Media!%20I%20would%20like%20to%20discuss%20a%20project."
+                  href="https://wa.me/918185807402?text=Hello%20ByteX%20Media!%20I%20would%20like%20to%20discuss%20a%20project."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#0B0F19] border border-[#1A253C] hover:border-[#10B981]/60 hover:bg-[#111827] transition-all group"
@@ -205,12 +205,28 @@ Description: ${formData.description}`;
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-xs text-[#94A3B8]">Direct WhatsApp / Chat</div>
+                    <div className="text-xs text-[#94A3B8]">Direct WhatsApp</div>
                     <div className="text-sm font-bold text-white group-hover:text-[#10B981] transition-colors">
-                      +91 93902 44788
+                      +91 81858 07402
                     </div>
                   </div>
                   <ExternalLink className="w-4 h-4 text-[#94A3B8] group-hover:text-[#10B981] transition-colors" />
+                </a>
+
+                <a
+                  href="tel:+918185807402"
+                  className="flex items-center gap-3.5 p-4 rounded-2xl bg-[#0B0F19] border border-[#1A253C] hover:border-[#00D2FF]/60 hover:bg-[#111827] transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#000000] border border-[#1A253C] flex items-center justify-center text-[#00D2FF] group-hover:scale-105 transition-transform shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-xs text-[#94A3B8]">Direct Phone Call</div>
+                    <div className="text-sm font-bold text-white group-hover:text-[#00D2FF] transition-colors">
+                      +91 81858 07402
+                    </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-[#94A3B8] group-hover:text-[#00D2FF] transition-colors" />
                 </a>
               </div>
             </div>

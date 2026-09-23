@@ -235,13 +235,13 @@ export const HomeOverview: React.FC<HomeOverviewProps> = ({ onNavigate, onStartJ
 
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <a
-                href="https://wa.me/919390244788?text=Hello%20ByteX%20Media!%20I%20want%20to%20discuss%20a%20project."
+                href="https://wa.me/918185807402?text=Hello%20ByteX%20Media!%20I%20want%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-[#10B981] hover:bg-[#059669] transition-colors shadow-lg"
               >
                 <MessageSquare className="w-4 h-4" />
-                <span>WhatsApp: +91 93902 44788</span>
+                <span>WhatsApp: +91 81858 07402</span>
               </a>
 
               <button

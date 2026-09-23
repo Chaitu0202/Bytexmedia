@@ -45,13 +45,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenPrivacy, onOpe
                 <span>hello@bytexmedia.in</span>
               </a>
               <a
-                href="https://wa.me/919390244788"
+                href="https://wa.me/918185807402?text=Hello%20ByteX%20Media!%20I%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-[#10B981] transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-[#10B981]" />
-                <span>+91 93902 44788</span>
+                <span>+91 81858 07402</span>
               </a>
             </div>
 
