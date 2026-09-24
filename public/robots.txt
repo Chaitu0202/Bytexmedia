@@ -1,0 +1,22 @@
+# Robots.txt for ByteX Media (https://bytexmedia.in)
+# Visakhapatnam (Vizag) Web Design & Engineering Studio
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Specialized Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /og-image.jpg
+Allow: /favicon.svg
+
+User-agent: Bingbot
+Allow: /
+
+# Host & Sitemap Declaration
+Host: https://bytexmedia.in
+Sitemap: https://bytexmedia.in/sitemap.xml

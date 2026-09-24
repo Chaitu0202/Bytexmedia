@@ -394,21 +394,21 @@ export const AI_WORKFLOWS: AIWorkflowItem[] = [
 export const PACKAGES_DATA: PackageItem[] = [
   {
     id: 'starter',
-    name: 'Website Development (Under ₹3,000)',
+    name: 'Website Designers Under 3000 in Vizag',
     badge: 'Under ₹3,000 in Vizag',
-    tagline: 'High-converting business websites under ₹3,000 in Vizag & pan-India starting at just ₹2,999.',
-    idealFor: 'Vizag local shops, clinics, cafes, professionals & startups.',
+    tagline: 'Hire top website designers under 3000 in Vizag. High-converting business websites starting at just ₹2,999.',
+    idealFor: 'Vizag shops, clinics, restaurants, local brands & startups looking for website designers under 3000.',
     price: '₹2,999',
     pricingNote: 'One-time investment • Under ₹3,000 guaranteed • Zero hidden fees',
     features: [
-      'Complete modern responsive business website (1-3 pages)',
+      'Designed by top website designers in Visakhapatnam (1-3 pages)',
       'Mobile, tablet & desktop layout optimization',
       'WhatsApp direct inquiry click-to-chat integration',
       'Ultra-fast load time (Core Web Vitals 95+ score)',
       'Localized Vizag Google Maps & SEO search tags',
       'Fast 3-5 day delivery & 100% full code ownership'
     ],
-    actionLabel: 'Get Web Dev for ₹2,999 →'
+    actionLabel: 'Hire Designer for ₹2,999 →'
   },
   {
     id: 'pro',

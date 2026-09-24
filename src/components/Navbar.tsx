@@ -164,7 +164,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange, onOpenQu
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-mono font-bold text-[#00D2FF] bg-[#00D2FF]/10 border border-[#00D2FF]/30 hover:bg-[#00D2FF]/20 transition-colors"
               >
-                <span>Websites Under ₹3,000 (Vizag)</span>
+                <span>Website Designers Under 3000 (Vizag)</span>
                 <span className="text-[10px] bg-[#00D2FF] text-black px-2 py-0.5 rounded-full font-black">₹2,999</span>
               </a>
 

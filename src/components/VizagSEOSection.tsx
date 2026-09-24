@@ -71,34 +71,34 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
 
   const vizagFaqs = [
     {
-      q: 'Can I genuinely get a professional business website under ₹3,000 in Vizag?',
-      a: 'Yes, absolutely. At ByteX Media, our Starter Business Website package is exactly ₹2,999. Unlike traditional agencies that charge ₹15,000 to ₹25,000 with huge markups, we are an agile, student-led engineering collective in Visakhapatnam. We build lightweight, high-performance websites with clean code, sub-second speeds, and zero agency overhead.',
+      q: 'Who are the best website designers under 3000 in Vizag?',
+      a: 'ByteX Media is ranked among the top website designers under 3000 in Vizag. We are a Visakhapatnam-based collective of modern software and web designers delivering custom business websites starting at exactly ₹2,999 with zero corporate bloat, clean code, and sub-second load times.',
     },
     {
-      q: 'What is included in the ₹2,999 website package for Vizag businesses?',
-      a: 'The ₹2,999 package includes: 1 to 3 fully custom, mobile-responsive pages, 1-click WhatsApp customer chat button, Google Maps location embed, on-page SEO meta tags for Vizag search ranking, SSL security configuration, contact/inquiry forms, and 100% full source code and asset ownership.',
+      q: 'What do website designers under 3000 in Vizag include in the ₹2,999 package?',
+      a: 'Our website designers provide a complete business-ready package: 1 to 3 fully responsive pages, mobile & desktop design, 1-click WhatsApp customer chat, Google Maps local embed, on-page SEO meta tags tailored for Visakhapatnam searches, SSL certificate setup, and 100% complete source code ownership.',
     },
     {
-      q: 'Will my ₹2,999 website rank on Google Search when customers in Vizag search for my business?',
-      a: 'Yes. Every website we build is structured with semantic HTML5, localized Schema.org structured data, fast loading speeds (Core Web Vitals compliant), and clean NAP (Name, Address, Phone) metadata targeted specifically at Visakhapatnam (Vizag) and your local neighborhood.',
+      q: 'Will websites built by your website designers in Vizag rank on Google Search?',
+      a: 'Yes, absolutely. Our website designers in Vizag engineer every website with semantic HTML5, localized Schema.org structured data, fast loading speeds (Core Web Vitals compliant), and clean NAP metadata targeted specifically at Visakhapatnam and your local neighborhood.',
     },
     {
-      q: 'How fast will my website be delivered after ordering in Vizag?',
-      a: 'We deliver your initial live staging prototype within 3 to 5 business days. Once you approve the design and copy, we connect your domain and launch the site live immediately.',
+      q: 'How fast do your website designers in Vizag deliver a website?',
+      a: 'We deliver your initial live staging prototype within 3 to 5 business days. Once you approve the visual design and content, we connect your custom domain and launch your business website live immediately.',
     },
     {
-      q: 'Do you help with domain names (.in / .com) and hosting setup?',
-      a: 'Yes! We guide you step-by-step to register your domain directly in your own name (cost ~₹499 to ₹899/year directly at registrar cost). We also set up ultra-fast cloud hosting with free SSL, ensuring you have 100% ownership with zero hidden vendor lock-in.',
+      q: 'Do your website designers help with domain registration and hosting setup in Vizag?',
+      a: 'Yes! We guide you step-by-step to register your domain (.com / .in) directly under your own name with zero hidden fees, and configure ultra-fast cloud hosting with free SSL encryption so you retain complete independent ownership.',
     },
     {
-      q: 'Which areas of Visakhapatnam (Vizag) do you serve?',
-      a: 'We serve all commercial zones across Visakhapatnam, including Dwaraka Nagar, MVP Colony, Siripuram, Madhurawada, Gajuwaka, Rushikonda, Kurmannapalem, Jagadamba Centre, Seethammadhara, Akkayyapalem, and Pendurthi, as well as clients pan-India.',
+      q: 'Which areas of Visakhapatnam do your website designers serve?',
+      a: 'Our website designers serve clients across Visakhapatnam, including Dwaraka Nagar, MVP Colony, Siripuram, Madhurawada, Gajuwaka, Rushikonda, Kurmannapalem, Jagadamba Centre, Seethammadhara, Akkayyapalem, Pendurthi, and pan-India businesses.',
     },
   ];
 
   const handleWhatsAppBooking = (typeTitle: string) => {
     const text = encodeURIComponent(
-      `Hello ByteX Media Team! I found you on Google searching for "Websites under 3000 in Vizag". I am interested in the ₹2,999 website package for my business (${typeTitle}). Please share the onboarding details.`
+      `Hello ByteX Media! I found you on Google searching for "Website designers under 3000 in Vizag". I want to hire a website designer for my business (${typeTitle}) under the ₹2,999 package. Please share the onboarding details.`
     );
     window.open(`https://wa.me/918185807402?text=${text}`, '_blank', 'noopener,noreferrer');
   };
@@ -114,18 +114,18 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
         <div className="max-w-3xl mb-16 text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00D2FF]/10 border border-[#00D2FF]/30 text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-4">
             <MapPin className="w-3.5 h-3.5" />
-            <span>( VIZAG #1 LOCAL WEB STUDIO · WEBSITES UNDER ₹3,000 )</span>
+            <span>( VIZAG #1 LOCAL WEB STUDIO · WEBSITE DESIGNERS UNDER 3000 )</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase font-editorial mb-4">
-            WEBSITES UNDER ₹3,000 IN VIZAG.{' '}
+            WEBSITE DESIGNERS UNDER 3000 IN VIZAG.{' '}
             <span className="text-[#00D2FF]">
               STARTING AT ₹2,999.
             </span>
           </h2>
 
           <p className="text-xs sm:text-sm font-mono text-[#CBD5E1] leading-relaxed max-w-2xl">
-            Searching for <strong>websites under 3000 in Vizag</strong>? ByteX Media delivers modern, sub-second responsive business websites tailored for Visakhapatnam stores, clinics, startups, and service providers. Complete build for <strong>₹2,999</strong> with zero hidden surprises.
+            Searching for <strong>website designers under 3000 in vizag</strong>? ByteX Media is Visakhapatnam's leading team of creative website designers, crafting modern, mobile-responsive business websites from <strong>₹2,999</strong>. Fast 3–5 day delivery, sub-second speed, and direct WhatsApp customer inquiries.
           </p>
         </div>
 
@@ -136,11 +136,11 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
               <Zap className="w-5 h-5" />
             </div>
             <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-wider mb-1 font-bold">
-              Guaranteed ₹2,999 Price
+              Affordable Website Designers
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Websites Under ₹3,000</h3>
+            <h3 className="text-xl font-bold text-white mb-2">Websites From ₹2,999</h3>
             <p className="text-xs text-[#94A3B8] leading-relaxed">
-              Transparent commercial pricing. Complete 1–3 page business website for just ₹2,999. No ₹20,000 agency markup.
+              Transparent, student-led commercial rates. Custom business websites under ₹3,000 without the ₹20,000 agency markup.
             </p>
           </div>
 
@@ -153,7 +153,7 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Rank #1 in Vizag Searches</h3>
             <p className="text-xs text-[#94A3B8] leading-relaxed">
-              Localized SEO tags, Google Business Profile coordination, and neighborhood keyword targeting across Vizag.
+              Our website designers optimize on-page SEO, Google Business Profile maps integration, and neighborhood keyword targeting.
             </p>
           </div>
 
@@ -162,11 +162,11 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
               <Smartphone className="w-5 h-5" />
             </div>
             <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-wider mb-1 font-bold">
-              WhatsApp Conversion Engine
+              WhatsApp Lead Funnel
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Instant Customer Leads</h3>
+            <h3 className="text-xl font-bold text-white mb-2">Direct Customer Calls</h3>
             <p className="text-xs text-[#94A3B8] leading-relaxed">
-              Mobile-first design with 1-click WhatsApp messaging. Visitors convert directly into real customers without friction.
+              Designed for conversion. 1-click WhatsApp messaging turns casual Google search visitors into paying customers.
             </p>
           </div>
         </div>
@@ -174,10 +174,10 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
         {/* Interactive Vizag Business Website Selector */}
         <div className="bg-[#070709] border border-white/10 rounded-3xl p-6 sm:p-10 mb-16 shadow-2xl relative">
           <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2 text-left">
-            ( VIZAG BUSINESS WEBSITE ESTIMATOR · EXACT ₹2,999 DELIVERABLE )
+            ( VIZAG WEBSITE DESIGNERS UNDER 3000 · EXACT ₹2,999 DELIVERABLE )
           </div>
           <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight uppercase font-editorial mb-6 text-left">
-            Select Your Vizag Business Type
+            Hire Vizag Website Designers for Your Business
           </h3>
 
           {/* Business Tabs */}
@@ -215,7 +215,7 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
 
               <div className="pt-2">
                 <div className="text-[10px] font-mono uppercase text-[#94A3B8] tracking-wider mb-2">
-                  What You Get in the ₹2,999 Package:
+                  What Our Vizag Website Designers Deliver for ₹2,999:
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-white font-medium">
                   <CheckCircle2 className="w-4 h-4 text-[#00D2FF] shrink-0" />
@@ -238,7 +238,7 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
                 className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm text-black bg-white hover:bg-[#00D2FF] transition-all cursor-pointer shadow-lg transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <MessageSquare className="w-4 h-4 text-emerald-600" />
-                <span>Book for ₹2,999 on WhatsApp</span>
+                <span>Hire Designer for ₹2,999 on WhatsApp</span>
               </button>
 
               <button
@@ -257,7 +257,7 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
             ( COMMERCIAL BENCHMARK · VALUE ANALYSIS )
           </div>
           <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight uppercase font-editorial mb-6">
-            ByteX ₹2,999 Starter vs Other Agencies in Vizag
+            ByteX Website Designers Under 3000 vs Other Vizag Agencies
           </h3>
 
           <div className="overflow-x-auto">
@@ -312,7 +312,7 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
               ( FREQUENTLY ASKED QUESTIONS · GOOGLE RANKING KNOWLEDGE BASE )
             </div>
             <h3 className="text-2xl sm:text-4xl font-black text-white tracking-tight uppercase font-editorial">
-              Everything You Need to Know About Websites Under ₹3,000 in Vizag
+              Everything You Need to Know About Website Designers Under 3000 in Vizag
             </h3>
           </div>
 
@@ -349,16 +349,16 @@ export const VizagSEOSection: React.FC<VizagSEOSectionProps> = ({
           <div className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-blue-900/30 via-[#00D2FF]/20 to-blue-900/30 border border-[#00D2FF]/30 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
             <div className="text-left">
               <h4 className="text-xl sm:text-2xl font-black text-white tracking-tight uppercase font-editorial mb-1">
-                Ready to Get Your Website Under ₹3,000 in Vizag?
+                Hire the Best Website Designers Under 3000 in Vizag
               </h4>
               <p className="text-xs text-[#CBD5E1] font-mono">
-                Speak directly with ByteX developers in Visakhapatnam. Prototypes ready in 3–5 days.
+                Speak directly with ByteX website designers in Visakhapatnam. Prototypes ready in 3–5 days.
               </p>
             </div>
 
             <div className="flex items-center gap-3 shrink-0">
               <button
-                onClick={() => handleWhatsAppBooking('Websites Under 3000 in Vizag')}
+                onClick={() => handleWhatsAppBooking('Website Designers Under 3000 in Vizag')}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm text-black bg-white hover:bg-[#00D2FF] transition-all cursor-pointer shadow-lg"
               >
                 <PhoneCall className="w-4 h-4" />

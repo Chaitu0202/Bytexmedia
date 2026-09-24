@@ -1,0 +1,22 @@
+{
+  "name": "ByteX Media - Website Designers Under 3000 in Vizag",
+  "short_name": "ByteX Media",
+  "description": "Top-rated website designers under 3000 in Vizag building modern responsive business websites from ₹2,999.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg"
+    }
+  ]
+}

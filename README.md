@@ -16,9 +16,9 @@
 
 ## ⚡ Overview
 
-**ByteX Media** is a modern student-led digital agency and engineering studio bridging tier-one software development with accessible pricing for growing Indian businesses. Ranked as the top studio for **websites under ₹3,000 in Vizag (Visakhapatnam)** and pan-India.
+**ByteX Media** is a modern student-led digital agency and engineering studio bridging tier-one software development with accessible pricing for growing Indian businesses. Ranked as the top team of **website designers under 3000 in Vizag (Visakhapatnam)** and pan-India.
 
-- **Websites Under ₹3,000 (Vizag & India)** — Starting from **₹2,999** (Sub-second load times, responsive mobile-first architecture, WhatsApp direct integration, localized Google Maps SEO).
+- **Website Designers Under 3000 in Vizag** — Starting from **₹2,999** (Sub-second load times, responsive mobile-first architecture, WhatsApp direct integration, localized Google Maps SEO).
 - **Cross-Platform Mobile Apps** — Starting from **₹9,999** (iOS & Android with modern gesture UI, backend database, push notifications).
 - **Google Business Profile Dominance** — Complete Setup for **₹999** (Local map pack ranking, NAP consistency audit, review acceleration).
 - **Instagram Handling & Content** — Organic follower-to-buyer sales funnels, reels scripts, and visual grid curation.

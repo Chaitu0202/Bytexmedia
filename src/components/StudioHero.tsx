@@ -28,15 +28,15 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
   const slides = [
     {
       id: 'web',
-      tag: '( WEBSITES UNDER ₹3,000 · VIZAG )',
-      title: 'Websites Under ₹3,000',
+      tag: '( WEBSITE DESIGNERS UNDER 3000 · VIZAG )',
+      title: 'Website Designers Under 3000',
       price: '₹2,999',
       priceLabel: 'Starts ₹2,999 in Vizag',
       serviceName: 'Website Development (from ₹2,999)',
       image: '/images/studio_laptop_mockup_1790189026060.jpg',
       webp: '/images/studio_laptop_mockup_1790189026060.webp',
-      category: 'WEBSITE BUILDING',
-      desc: 'Sub-second speed, custom design, mobile responsiveness, and WhatsApp lead capture for Vizag & Indian businesses.',
+      category: 'WEBSITE DESIGNERS VIZAG',
+      desc: 'Top website designers under 3000 in Vizag delivering sub-second speed, custom UI/UX, mobile responsiveness, and WhatsApp lead capture starting at ₹2,999.',
     },
     {
       id: 'app',
@@ -145,7 +145,7 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
         <div className="mx-auto md:mx-0 flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
           <span className="w-1.5 h-1.5 rounded-full bg-[#00D2FF] animate-pulse" />
           <span className="text-white font-bold tracking-widest uppercase text-[10px]">
-            Websites Under ₹3,000 • Vizag & Pan-India
+            Website Designers Under 3000 • Vizag
           </span>
         </div>
 
@@ -155,7 +155,7 @@ export const StudioHero: React.FC<StudioHeroProps> = ({ onNavigate, onStartJourn
             href="#vizag-websites"
             className="text-[#00D2FF] hover:underline transition-colors cursor-pointer text-right font-bold"
           >
-            ( Websites Under ₹3,000 · Vizag Hub )
+            ( Website Designers Under 3000 · Vizag )
           </a>
           <button
             onClick={() => onNavigate('services')}
