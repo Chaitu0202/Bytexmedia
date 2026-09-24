@@ -9,102 +9,29 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://bytexmedia.in/og-image.jpg</image:loc>
-      <image:title>Website Under 3000 - Best Website Designers from ₹2,999 (India & Vizag) - ByteX Media</image:title>
+      <image:title>ByteX Media - Website Under 3000 | Best Web Designers from ₹2,999 (India &amp; Vizag)</image:title>
       <image:caption>Top website designers under 3000 building custom business websites starting at ₹2,999 across India and Visakhapatnam</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://bytexmedia.in/images/studio_laptop_mockup_1790189026060.jpg</image:loc>
-      <image:title>High Converting Business Websites Under 3000</image:title>
+      <image:title>High Converting Business Websites Under 3000 - ByteX Media</image:title>
+      <image:caption>Custom responsive business website under 3000 with WhatsApp lead chat, sub-second speed, and Google SEO</image:caption>
     </image:image>
-  </url>
-
-  <!-- High-Priority Target Section: Website Under 3000 (Pan-India & Remote Worldwide) -->
-  <url>
-    <loc>https://bytexmedia.in/#website-under-3000</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.98</priority>
-    <image:image>
-      <image:loc>https://bytexmedia.in/images/studio_laptop_mockup_1790189026060.jpg</image:loc>
-      <image:title>Website Under 3000 Anywhere in India - Starting ₹2,999</image:title>
-      <image:caption>Professional 1-3 page custom website under 3000 with WhatsApp lead chat, sub-second speed, Google SEO, delivered in 3-5 days</image:caption>
-    </image:image>
-  </url>
-
-  <!-- Localized Hub: Website Designers Under 3000 in Vizag -->
-  <url>
-    <loc>https://bytexmedia.in/#vizag-websites</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://bytexmedia.in/images/studio_laptop_mockup_1790189026060.jpg</image:loc>
-      <image:title>Website Designers Under 3000 in Vizag - Starting ₹2,999</image:title>
-      <image:caption>Visakhapatnam website designers delivering custom websites with local Google Maps SEO and WhatsApp integration</image:caption>
-    </image:image>
-  </url>
-
-  <!-- Packages & Commercial Pricing (Starter ₹2,999, Pro ₹9,999, Growth ₹999) -->
-  <url>
-    <loc>https://bytexmedia.in/#packages</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- Full Services Spectrum -->
-  <url>
-    <loc>https://bytexmedia.in/#services</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Work & Portfolio Case Studies -->
-  <url>
-    <loc>https://bytexmedia.in/#work</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
     <image:image>
       <image:loc>https://bytexmedia.in/images/case_study_coffee_1790189073111.jpg</image:loc>
-      <image:title>Coastal Brew Cafe - Case Study</image:title>
+      <image:title>Coastal Brew Cafe - Case Study by ByteX Media</image:title>
     </image:image>
     <image:image>
       <image:loc>https://bytexmedia.in/images/case_study_dental_1790189088658.jpg</image:loc>
-      <image:title>Apex Dental Clinic - Case Study</image:title>
+      <image:title>Apex Dental Clinic - Case Study by ByteX Media</image:title>
     </image:image>
     <image:image>
       <image:loc>https://bytexmedia.in/images/case_study_boutique_1790189104889.jpg</image:loc>
-      <image:title>Silk & Stone Fashion Boutique - Case Study</image:title>
+      <image:title>Silk &amp; Stone Fashion Boutique - Case Study by ByteX Media</image:title>
     </image:image>
     <image:image>
       <image:loc>https://bytexmedia.in/images/case_study_fitness_1790189121021.jpg</image:loc>
-      <image:title>Pulse Fitness Studio - Case Study</image:title>
+      <image:title>Pulse Fitness Studio - Case Study by ByteX Media</image:title>
     </image:image>
-  </url>
-
-  <!-- AI Automation & Pipeline Studio -->
-  <url>
-    <loc>https://bytexmedia.in/#ai</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- About Us & Student Engineering Collective -->
-  <url>
-    <loc>https://bytexmedia.in/#about</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- Direct Consultation & Inquiry Funnel -->
-  <url>
-    <loc>https://bytexmedia.in/#contact</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
   </url>
 </urlset>
